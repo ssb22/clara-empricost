@@ -33,7 +33,7 @@
 #include <stdio.h>
 #include <assert.h>
 #include <iostream.h>
-#include "antisebi.h"
+#include "protect.h"
 
 #ifndef TSR_VERSION
 extern Boolean newMelodiesIn68;

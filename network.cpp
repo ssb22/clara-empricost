@@ -31,7 +31,7 @@
 #include <string.h>
 #include "network.h"
 #include "tsr.h"
-#include "antisebi.h"
+#include "protect.h"
 
 char* getFilename(int number,Boolean complete);
 char* getFilename2(char* fname) {

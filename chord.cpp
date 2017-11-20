@@ -31,7 +31,7 @@
 #include <assert.h>
 #include "rng.h"
 #include "tsr.h"
-#include "antisebi.h"
+#include "protect.h"
 
 NoteOfChord ChordPoss::getSop(int possibility) {
 	static int y=possChordDegrees*possOctaves;
