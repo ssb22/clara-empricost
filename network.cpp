@@ -82,37 +82,6 @@ char* getFilename(int number,Boolean complete) {
 }
 
 #ifdef RUNNING_ON_DOS
-/*#ifdef TSR_VERSION
-// Need to bypass C++'s findfirst etc functions because they don't work
-// when the program is TSR
-// ---- THIS FUNCTION DOES NOT RETURN CORRECT VALUE WHEN FOUND ----
-// static char newDta[256],far*save_dta;
-// (We don't need to worry about the DTA etc because we are intercepting
-// the wrong interrupt)
-// No register variables please
-#pragma option -r-
-int myFindfirst(char* wildcard,int attrib,struct find_t* ffblk) {
-//	save_dta=getdta(); setdta(newDta);
-	int temp1=FP_OFF(wildcard),temp2=FP_SEG(wildcard);
-	asm mov ax,0x4E00;
-	asm mov cx,attrib;
-	asm mov dx,temp1;
-	asm push ds; // Will be needed later
-	asm mov ds,temp2;
-	asm int 0x21;
-	asm mov bx,0;  // Because I don't know
-	asm adc bx,0;  // how to get the carry bit otherwise
-	asm pop ds;
-	unsigned xseg=_BX; // Get the carry flag
-	memcpy(ffblk,/*new_dta*//*getdta(),43); // Especially the 13 bytes from offset &1E - the filename
-//	setdta(save_dta);
-	return(xseg);
-}
-// Register variables back on again
-#pragma option -r
-#define _dos_findfirst myFindfirst
-#endif
-*/
 char* filenameMatching(char* wildcard) {
 	static char internal[MAXPATH];
 #ifdef TSR_VERSION

@@ -64,7 +64,6 @@ int main() {
 	initRevokeTime();
 	while(1) useYourTimeUsefully();
 #else
-	makeDirectory("WORKING"); makeDirectory("READING"); makeDirectory("WRITING");
 	FILE* prevFile=fopen(SETTINGS_FNAME,"rb");
 	if (!prevFile && filenameMatching(MEL_UNFINISHED_LIT WILDCARD_LIT MEL_EXTENTION)) {
 #ifndef SETUP_ONLY_VERSION
@@ -130,7 +129,7 @@ void exitFunc() {
 
 #ifdef strupr
 char* upperCase(char* string) {
-	for (int lp=0; lp<strlen(string); lp++)
+	for (int lp=0; string[lp]; lp++)
 		string[lp]=toupper(string[lp]);
 	return(string);
 }
@@ -162,7 +161,7 @@ char* filenameMatching(char* wildcard) {
     int found=0;
     static char buf[MAXPATH];
     struct dirent *ep;
-    while(ep=readdir(dp)) {
+    while((ep=readdir(dp))!=NULL) {
       if(!fnmatch(wildcard,ep->d_name,FNM_PATHNAME|FNM_NOESCAPE)) {
         strcpy(buf,ep->d_name);
         found=1; break;
@@ -171,5 +170,6 @@ char* filenameMatching(char* wildcard) {
     closedir(dp);
     if(found) return buf;
   } else puts("Warning: Couldn't open the directory.");
+  return NULL;
 }
 #endif

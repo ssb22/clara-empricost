@@ -21,7 +21,7 @@ The sound quality of MIDI files will depend to a large extent on that of your so
 Running
 =======
 
-To compile on modern Unix systems: `g++ -fno-for-scope -fno-operator-names -D__unix__ *.cpp -o clara`
+To compile on modern Unix systems: `make`
 
 Then run: `./clara`
 

@@ -135,6 +135,18 @@ void Melody::generate(FILE* loadFrom) {
 		fread((void*)&theNumber,sizeof(theNumber),1,loadFrom);
 		fread((void*)&in68,sizeof(in68),1,loadFrom);
 		fread((void*)&theEvalLastChordStatus,sizeof(theEvalLastChordStatus),1,loadFrom);
+#ifndef TSR_VERSION
+        theKey.printReportTo(stdout); printf("->"); theFinishKey.printReportTo(stdout);
+        cout <<
+          " canModulate=" << theCanModulate <<
+          " bpb=" << (int)theBeatsPerBar <<
+          " anac=" << (int)theAnacrusis <<
+          " in68=" << in68 <<
+          " chords=" << theNumberOfChords <<
+          " cadences=" << theNumberOfCadences <<
+          " endFinal=" << doNeedEndFinal <<
+          endl;
+#endif
 	} else {
 		if (chordLp>theNumberOfChords) return;
 		// thePack will always be initialised
@@ -212,6 +224,7 @@ void Melody::outputToMwr(Mwr &mwr,int needToInitPart,int needToEndPart,const Key
 			if (!useYourTimeUsefully()) {
 				cout << "Error - no tasks available to this workstation, waiting for " << theNumber << endl;
 #ifndef TSR_VERSION
+                sleep(1);
 				if (aKeyIsPressed()) { // Exit without saving anything
 #ifdef RUNNING_ON_DOS
 				if (getch()=='Q') { // Stop the people pressing Escape!

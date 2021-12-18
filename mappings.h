@@ -129,9 +129,6 @@ void* operator new(size_t size);
 void operator delete(void*p);
 #endif
 
-// #define makeDirectory(c) mkdir((c),0755)
-#define makeDirectory(c) (0)
-
 #define emailExtention ".CNM"
 #define EMAIL_DIRECTORY "Y:\\MAIL\\4000006"
 #define MAILDIR_SEARCH "Y:\\MAIL\\*.*"
