@@ -25,7 +25,6 @@
 #include <stddef.h> // For NULL
 #include <stdio.h>
 #include <assert.h>
-#include <iostream.h>
 #include "protect.h"
 
 #ifndef TSR_VERSION
@@ -138,13 +137,13 @@ void Melody::generate(FILE* loadFrom) {
 #ifndef TSR_VERSION
         theKey.printReportTo(stdout); printf("->"); theFinishKey.printReportTo(stdout);
         cout <<
-          " canModulate=" << theCanModulate <<
+		  " canMod=" << (int)theCanModulate <<
           " bpb=" << (int)theBeatsPerBar <<
           " anac=" << (int)theAnacrusis <<
-          " in68=" << in68 <<
-          " chords=" << theNumberOfChords <<
-          " cadences=" << theNumberOfCadences <<
-          " endFinal=" << doNeedEndFinal <<
+          " in68=" << (int)in68 <<
+          " chords=" << (int)theNumberOfChords <<
+          " cadences=" << (int)theNumberOfCadences <<
+          " endFinal=" << (int)doNeedEndFinal <<
           endl;
 #endif
 	} else {

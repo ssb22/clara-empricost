@@ -32,4 +32,4 @@ protected:
 	Minuet* theMinuet,*theTrio; // 3rd movement
 	Rondo* theRondo; // 4th movement
 };
-#endif SYMPHONY_H
+#endif // SYMPHONY_H

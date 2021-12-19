@@ -30,6 +30,8 @@ To compile on other systems, you may have to modify `mappings.h`.
 The program should then prompt you for a random number seed and the number of bars to write in each phrase, and then begin displaying things to indicate that it’s doing something. (Don’t try to log all this as the log can get very big.) When finished, it should leave the piece in a file with the extension .MWR, which is an input file to [Manuscript Writer](http://ssb22.user.srcf.net/mwrhome/).  On modern systems you should be able to use `mwr2ly` to convert this to Lilypond.
 From there you can convert to MIDI and/or printed score.
 
+If the program takes excessively long or says “Unable to find solution” then this might mean it has chosen a bad combination of keys for the movements and you should try a different random number seed.
+
 Because modern computers are generally much faster than they were in 1996, it should not be necessary to use parallel processing as I did at the time.  But if you wish, you can do so by running another instance of the program in the same directory: it should begin helping out the first instance. This can be done via multiple processors on the same machine, or on a cluster of machines sharing a filespace via NFS or other means of sharing a filespace.  The program was originally designed to run as a background task on about 20 DOS machines, and it is resilient to individual machines crashing etc (you can actually get it to save its state, but at today’s speeds there is little point).
 
 How it works

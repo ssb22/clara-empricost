@@ -96,10 +96,9 @@ void Mwr::initPart(int beatsPerBar) {
 }
 
 void Mwr::setKey(Key newKey) {
-	if (theKey.isEqualTo(newKey)==FALSE) {
-		theKey=newKey;
-		fprintf(theStream,"K%d%c",theKey.getNumAccidentals(),theKey.getAccidentalType());
-	} initAccidentals();
+	theKey=newKey;
+	fprintf(theStream,"K%d%c",theKey.getNumAccidentals(),theKey.getAccidentalType());
+	initAccidentals();
 }
 
 void Mwr::printDoubleBar() {
@@ -115,7 +114,7 @@ void Mwr::output(char* toOutput,int &dot) {
 	}
 	// Do the doubling first so that octave signs don't get in the way of ornaments
 	if (o2[0]>='A' && o2[0]<'A'+tonesInOctave) {
-		/*if (thePart==P_BAS) { // Double up an 8ve lower stacatto
+		/*if (thePart==P_BAS) { // Double up an 8ve lower staccato
 			fprintf(theStream,"<%s",o2); if (dot) fputc('.',theStream);
 			fprintf(theStream,"&>");
 		} else*/ if (thePart==P_SOP) { // Double up an 8ve higher

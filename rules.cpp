@@ -182,7 +182,7 @@ int Chord::checkMelody(Part part) const {
 			}
 			c=c->getLastChord();
 		}
-		// 3-note descending or ascending scale passage in bass should be followed by further step in same direction rather than a leap (in this implimentation a repeat is also allowed)
+		// 3-note descending or ascending scale passage in bass should be followed by further step in same direction rather than a leap (in this implementation a repeat is also allowed)
 		if (part==P_BAS && !noOfLeaps && noAscendingScale>=3 && (leapInt.getValue()>=i_third || leapInt.isDescending()==TRUE)) return(1); // #39 rejector with 936 calls
 		// S/B avoid remaining around one note for too long: If used more than once in previous 4 chords, reject
 		if (part==P_SOP || part==P_BAS) {

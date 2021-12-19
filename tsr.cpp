@@ -141,6 +141,12 @@ jmp_buf foregroundProgram,backgroundProgram;
 static char* inDosFlag,*criticalErrorFlag;
 
 #ifdef PLAY_TUNE_VERSION
+/* "Chorus of beeping PCs" experiment - reading from a
+   shared network directory.  This first experiment did
+   not work very well, and was replaced by
+   Manuscript Writer's own TSR (using the IPX protocol),
+   which passed more detailed data to a sound card.
+*/
 #include <math.h>
 static clock_t timeOut=0;
 static long objNoFromFile(char* file) {
@@ -276,7 +282,7 @@ void tsr_exit() {
 			(well that's the theory ...)
 			(The first parameter for keep is the program's errorlevel exit code)
 		*/
-		// Also add any data already allocated on the heap by startup routines NEEDATTENTION More safety!
+		// Also add any data already allocated on the heap by startup routines TODO More safety!
 		_dos_keep(0,_SS+(_stklen+SAFETY_SPACE+HEAP_LEN)/16-_psp);
 	}
 }

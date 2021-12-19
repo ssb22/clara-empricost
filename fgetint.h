@@ -23,7 +23,7 @@
 #include <stdio.h>
 inline int fgetInteger(FILE* stream) {
 	int w;
-//	fseek(stream,ftell(stream),SEEK_SET); // Workaround strange bug NEEDATTENTION Remove
+//	fseek(stream,ftell(stream),SEEK_SET); // Workaround strange bug TODO Remove
 	fread(&w,sizeof(w),1,stream);
 	return(w);
 }

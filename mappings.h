@@ -23,12 +23,9 @@
 
 // MAPPINGS.H: INCLUDED AT THE BEGINNING OF EVERY MODULE
 
-// This mappings.h has been hacked to get the thing running
-// on Unix.
-// Compile with g++ -fno-for-scope *.cpp
-
-// If the program is to compile on DOS, this file should include
-// #define RUNNING_ON_DOS
+#ifdef __TCPLUSPLUS__
+#define RUNNING_ON_DOS
+#endif
 
 // If not running on DOS, aKeyIsPressed, deleteFile,etc. should be updated
 // It should be a function returning non-0 if a key has been pressed
@@ -82,27 +79,40 @@
 
 // Now all clear to make declarations, etc.
 
-// #define RUNNING_ON_DOS
+#define SINGLE_DIRECTORY /* not for TSR version */
+#ifdef SINGLE_DIRECTORY
+#define DIR_SEPARATOR '-'
+#else
 // #define DIR_SEPARATOR '\\'
-// #define DIR_SEPARATOR '/'
-#define DIR_SEPARATOR '-' // just put it all in one directory
+#define DIR_SEPARATOR '/'
+#endif
 // #define FAST_RANDOM 232 /* Length of random table; don't define if call RNG directly */
 
-// #include <conio.h>
-// #define aKeyIsPressed kbhit
+#ifdef RUNNING_ON_DOS
+#include <conio.h>
+#define aKeyIsPressed kbhit
+#include <dos.h>
+#include <dir.h>
+#else
 inline int return0() { return 0; }
 #define aKeyIsPressed return0
+#endif
 
-// #include <dos.h>
-// #include <dir.h>
 #include <stddef.h>
 #include <stdio.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <fcntl.h>
-#include <unistd.h>
 #include <dirent.h>
+
+#ifdef __TCPLUSPLUS__
+#include <iostream.h>
+#else
+#include <iostream>
+using namespace std;
+#include <unistd.h>
 #include <fnmatch.h>
+#endif
 
 #define deleteFile remove
 #define renameFile rename /* Returns 0 on sucess */
@@ -114,14 +124,17 @@ char* upperCase(char* string);
 
 #define WILDCARD_LIT "*"
 
-//inline void deleteChar() {
-//if (wherex()==1) gotoxy(80,wherey()-1);
-//else gotoxy(wherex()-1,wherey());
-//clreol();
-//}
+#ifdef RUNNING_ON_DOS
+inline void deleteChar() {
+if (wherex()==1) gotoxy(80,wherey()-1);
+else gotoxy(wherex()-1,wherey());
+clreol();
+}
 //#define deleteChar() printf("\x8 \x8") doesn't seem to work with split lines
+#else
 #define deleteChar() printf("\b \b")
 // (this works on Unix, although you have to wait for the buffer to flush)
+#endif
 
 #ifdef BYPASS_MALLOC
 typedef unsigned size_t;
@@ -134,17 +147,17 @@ void operator delete(void*p);
 #define MAILDIR_SEARCH "Y:\\MAIL\\*.*"
 #define YMAIL "Y:\\MAIL\\"
 #define ALT_EMAIL_DIR "N:\\USERS\\YEAR97\\BROWN\\COMPUTIN.G\\PROGRAMS\\C\\COMPOS\\WRITING\\"
-#define FINISHED_DIR "WRITING-"
-#define UNFINISHED_DIR "WORKING-"
-#define MIN_DATE_FILE "READING-MINDATE.DAT"
-#define MAX_DATE_FILE "READING-MAXDATE.DAT"
-#define MEL_EXTENTION ".MEL"
+#define FINISHED_DIR "WR-"
+#define UNFINISHED_DIR "WK-"
+#define MIN_DATE_FILE "MINDATE.DAT"
+#define MAX_DATE_FILE "MAXDATE.DAT"
+#define MEL_EXTENSION ".MEL"
 #define MEL_FINISHED_CHAR 'F'
-#define MEL_FINISHED_LIT "WRITING-F"
+#define MEL_FINISHED_LIT "WR-F"
 #define MEL_UNFINISHED_CHAR 'I'
-#define MEL_UNFINISHED_LIT "WORKING-I"
+#define MEL_UNFINISHED_LIT "WK-I"
 #define MEL_TEMP_CHAR 'T'
-#define SETTINGS_FNAME "WRITING-RNGSEED.DAT"
+#define SETTINGS_FNAME "WR-SEED.DAT"
 #define SYSTEM_VOLUME "SYS:"
 #define MAIL_DRIVE_TO_MAP ('Y'-'A'+1)
 #define WORK_DRIVE_TO_MAP ('N'-'A'+1)

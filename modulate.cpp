@@ -32,7 +32,7 @@ Boolean Chord::isFalseRelation() const {
 					&& getPart(p1).intervalWith(theLastChord->getPart(p1)).getRoundedValue()!=i_unison
 					// Fine if root of this chord is 3rd of last
 					&& realNote(N_ONE1,BAS_OCTAVE,getFigure()).isEqualTo(realNote(N_THREE1,BAS_OCTAVE,theLastChord->getFigure()))==FALSE)
-					// NEEDATTENTION Also fine if second note is 7 of V7
+					// TODO Also fine if second note is 7 of V7
 						return(TRUE);
 				}
 	return(FALSE);
@@ -47,7 +47,7 @@ Boolean Chord::modulationIsFineV(KeyRef newKey) /*const*/ {
 	// Can't be final chord unless theMelody->canModulateAtEnd()
 	if (!theLastChord || getFigureIn(newKey)!=V || isFalseRelation()==TRUE || (theFinalChordStat==TRUE && theMelody->canModulateAtEnd()==FALSE)) goto itIsNoGood;
 	// For transition, must share at least 1 note with last chord, which can't be also found in this key
-	// NEEDATTENTION Transitions: When impliment dominant 7, see para 10 in Modulations
+	// TODO Transitions: When implement dominant 7, see para 10 in Modulations
 	if (hasNoteInCommonWith(theLastChord)==FALSE || theLastChord->isInKey(newKey)==TRUE) {
 		// In that case, "gradual" modulation must be used if any
 		// Last chord is pivot chord: Must be in both keys
@@ -65,7 +65,7 @@ Boolean Chord::modulationIsFineV(KeyRef newKey) /*const*/ {
 			Interval i=getPart(p).intervalWith(theLastChord->getPart(p));
 			if (i.getRoundedValue()==i_unison && i.isDescending()==TRUE && getPart(p).isEqualTo(theLastChord->getPart(p))==FALSE) {
 				// continue; if fine
-				// NEEDATTENTION When impliment V7, also fine if this note is 7 of V7
+				// TODO When implement V7, also fine if this note is 7 of V7
 				// Fine if 3rd and this chord == last chord
 				if (getFigureIn(newKey)==theLastChord->getFigureIn(newKey) && (getNoteOfChord(p)==N_THREE1 || getNoteOfChord(p)==N_THREE2)) continue;
 				goto itIsNoGood;

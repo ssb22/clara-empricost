@@ -31,7 +31,7 @@
 #include "symphony.h"
 #include "canon.h"
 
-#define RONDO_EPISODES 5 /* NEEDATTENTION */
+#define RONDO_EPISODES 5 /* TODO vary? */
 
 #define NUM_IN_SELECTION 6
 static int beatSelection[]={2,3,3,4,4,6};

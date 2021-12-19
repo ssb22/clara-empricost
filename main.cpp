@@ -19,7 +19,6 @@
     limitations under the License.
 */
 #include "mappings.h"
-#include <iostream.h>
 #include <time.h> // For RNG init
 #include "rng.h"
 #include "symphony.h"
@@ -27,6 +26,7 @@
 #include "melody.h"
 #include <stdlib.h> /* For atexit */
 #include <ctype.h>
+#include <string.h> // strcpy
 #include "tsr.h"
 
 #ifdef RUNNING_ON_DOS
@@ -65,7 +65,7 @@ int main() {
 	while(1) useYourTimeUsefully();
 #else
 	FILE* prevFile=fopen(SETTINGS_FNAME,"rb");
-	if (!prevFile && filenameMatching(MEL_UNFINISHED_LIT WILDCARD_LIT MEL_EXTENTION)) {
+	if (!prevFile && filenameMatching(MEL_UNFINISHED_LIT WILDCARD_LIT MEL_EXTENSION)) {
 #ifndef SETUP_ONLY_VERSION
 		while(useYourTimeUsefully())
 #endif

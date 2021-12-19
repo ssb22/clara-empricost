@@ -22,13 +22,13 @@
 #ifndef SETUP_ONLY_VERSION
 #ifndef TSR_VERSION
 #include "chord.h"
-void flattern(char&c);
+void flatten(char&c);
 void sharpen(char&c);
 void Chord::changeChromaticAccidental(char &accidental,Part whichPart) const {
 	Figure fig=getFigure(); NoteOfChord noteOfChord=getNoteOfChord(whichPart);
 	Figure nextFig=fig; if (theNextChord) nextFig=theNextChord->getFigureIn(getKey());
 	// "Supertonic chromatic common chord", T Keighley Mus D FRCO etc 1914 p110
-	// NEEDATTENTION Also if going to V7; see also RULES.CPP in this case, and make some choice between this and Neapolitan 6th
+	// TODO Also if going to V7; see also RULES.CPP in this case, and make some choice between this and Neapolitan 6th
 	if (fig==II && theNextChord && (nextFig==I || nextFig==II || nextFig==IV || nextFig==VII)) {
 		if ((getKey().isMajor()==FALSE && (noteOfChord==N_FIVE1 || noteOfChord==N_FIVE2))
 		|| noteOfChord==N_THREE1 || noteOfChord==N_THREE2)
@@ -37,20 +37,20 @@ void Chord::changeChromaticAccidental(char &accidental,Part whichPart) const {
 	} else if (fig==II && theNextChord && (nextFig==I || nextFig==V) && getInversion()!=ISECOND) {
 		if ((getKey().isMajor()==TRUE && (noteOfChord==N_FIVE1 || noteOfChord==N_FIVE2))
 		|| noteOfChord==N_ONE1 || noteOfChord==N_ONE2)
-			flattern(accidental);
+			flatten(accidental);
 	// "Diatonic Triads in the Minor Key used as Chromatic Triads in the Major Key" (p113)
 	} else if (getPart(whichPart).getDegreeOfScale()==SUBMEDIANT && getKey().isMajor()==TRUE)
-		flattern(accidental);
+		flatten(accidental);
 	// Flatterned dominant - this is one of mine
 	else if (getPart(whichPart).getDegreeOfScale()==LEADING_NOTE && getKey().isMajor()==TRUE && fig==V)
-		flattern(accidental);
+		flatten(accidental);
 }
 
 void Chord::doChromaticUnessentials(char &accidental,const Note &note,const Note &before,const Note &after) const {
 	if ((note.isToneAwayFrom(before)==TRUE && note.isEqualTo(after)==TRUE) // Unaccented chromatic passing note
 	|| (note.isToneAwayFrom(after)==TRUE && before.isEqualTo(after)==TRUE)) { // Chromatic auxilliary note
 		// Can push it one semitone in direction of before
-		if (note.isHigherThan(before)==TRUE) flattern(accidental);
+		if (note.isHigherThan(before)==TRUE) flatten(accidental);
 		else sharpen(accidental);
 	}
 }

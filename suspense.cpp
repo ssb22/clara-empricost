@@ -123,7 +123,7 @@ Boolean Chord::canSuspendPart(Part part) const {
 }
 
 void Chord::selectSuspensions() {
-	// NEEDATTENTION Poss problems with passing or harmony notes on same chord as suspension
+	// TODO Poss problems with passing or harmony notes on same chord as suspension
 	theSuspendedStatus=NO_SUSPENSIONS;
 	if (theLastChord) {
 		Note s=getPart(P_SOP),a=getPart(P_ALT),t=getPart(P_TEN),b=getPart(P_BAS);

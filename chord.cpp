@@ -280,9 +280,9 @@ Boolean Chord::isPartSuspended(Part part) const {
 Note Chord::realNote(NoteOfChord note,Octave octave,Figure figure,int addOne) const {
 	DegreeOfScale deg;
 	switch(note) {
-		case N_ONE2: octave++; case N_ONE1: deg=(DegreeOfScale)figure; break;
-		case N_THREE2: octave++; case N_THREE1: if (figure+incThird>=possFigs) octave++; deg=(DegreeOfScale)((figure+incThird)%possFigs); break;
-		case N_FIVE2: octave++; case N_FIVE1: if (figure+incFifth>=possFigs) octave++; deg=(DegreeOfScale)((figure+incFifth)%possFigs); break;
+		case N_ONE2: octave++; /* fall through */ case N_ONE1: deg=(DegreeOfScale)figure; break;
+		case N_THREE2: octave++; /* fall through */ case N_THREE1: if (figure+incThird>=possFigs) octave++; deg=(DegreeOfScale)((figure+incThird)%possFigs); break;
+		case N_FIVE2: octave++; /* fall through */ case N_FIVE1: if (figure+incFifth>=possFigs) octave++; deg=(DegreeOfScale)((figure+incFifth)%possFigs); break;
 //		default: printf("Note=%d\n",note); assert(0);
 	}
 	if (((DegreeOfScale)((deg+(addOne!=0))%possFigs))<deg) octave++;
@@ -398,7 +398,7 @@ void Chord::printReportTo(FILE* file) const {
 		}
 	} else getKey().printReportTo(file);
 }
-void flattern(char&c) { if (c=='#') c='n'; else c='-'; }
+void flatten(char&c) { if (c=='#') c='n'; else c='-'; }
 void sharpen(char&c) { if (c=='-') c='n'; else c='#'; }
 
 int Chord::outputToMwr(Mwr &mwr,int extnOfLast,int &dot,int &d2,int &loop,int needToEndPart,const Key* transposeTo,Boolean addChromaticisms,Boolean doRepeatEnd) const {
@@ -417,7 +417,7 @@ int Chord::outputToMwr(Mwr &mwr,int extnOfLast,int &dot,int &d2,int &loop,int ne
 			if (getNextChord()->getPassNote(mwr.getPart()).isEqualTo(undefinedNote)) { mwr.setLen(2,d2); return(1); }
 			else if (!theMelody->isIn68()) {
 				mwr.setLen(4,d2);
-				// @@@ If d2, crotchet tied to semiquaver going to another semiquaver; this is limited implimentation
+				// @@@ If d2, crotchet tied to semiquaver going to another semiquaver; this is limited implementation
 				dot=1; loop=2;
 				if (d2) { dot=0; d2=0; }
 				return(1);
@@ -435,7 +435,6 @@ int Chord::outputToMwr(Mwr &mwr,int extnOfLast,int &dot,int &d2,int &loop,int ne
 			else { Note n=getPart(mwr.getPart()); theNote=new Note(&n); }
 		} else theNote=new Note(getPartOrPass(loopedBefore,mwr.getPart()));
 		if (transposeTo) theNote->transposeToKey(*transposeTo);
-		mwr.setOctave(theNote->getMwrOctave());
 		char output[3]; theNote->initMwr(output);
 		// By default, exactly as key signature for appropriate key
 		if ((loopedBefore && theLastChord && theLastChord->nextNeedsToAccent(mwr.getPart())==FALSE && theNote->intervalWith(getPart(mwr.getPart())).getValue()==i_second)
@@ -454,6 +453,7 @@ int Chord::outputToMwr(Mwr &mwr,int extnOfLast,int &dot,int &d2,int &loop,int ne
 			// Submediant not sharpened - don't need to bother
 			if (addChromaticisms==TRUE) changeChromaticAccidental(output[1],mwr.getPart());
 		}
+		mwr.setOctave(theNote->getMwrOctave()-(theNote->getDegreeOfScale()==LEADING_NOTE&&!strcmp(output,"b#"))); // bug workaround (key.cpp assumes harmonic minor, so Note will already have set b# in getSemitoneNumber which means getMwrOctave returns 1 too high for leading note in C# minor)
 		for (int rptLp=0; rptLp<1+(mwr.getLength()==16 && theOrnPart==mwr.getPart() && (theOrnament==ORN_DAGATA || theOrnament==ORN_TADAGA)); rptLp++) {
 			int oldDot=dot; dot+=d2; mwr.output(output,dot); dot=oldDot; d2=0;
 			if (!loopedBefore && theLastChord && theLastChord->isPartSuspended(mwr.getPart())) mwr.directOutput("=+"); // Mordents on resolutions
@@ -462,16 +462,16 @@ int Chord::outputToMwr(Mwr &mwr,int extnOfLast,int &dot,int &d2,int &loop,int ne
 		// Dotted quaver to semiquaver or vice versa: Semiquaver adds quaver, dot adds nothing (due to rounding down)
 		// Quaver 2 semis or vice versa: 2 semis add quaver
 		mwr.subtractBeats(8/((mwr.getLength()==16)?8:mwr.getLength()),this,(!theNextChord) && doRepeatEnd);
-		if (dot) mwr.subtractBeats(4/mwr.getLength(),this,(!theNextChord) && doRepeatEnd); dot=0;
+		if (dot) { mwr.subtractBeats(4/mwr.getLength(),this,(!theNextChord) && doRepeatEnd); dot=0; }
 		if (loop==2) {
 			if (!getNextChord() && mwr.getBeatsLeft()-theMelody->getAnacrusis()*2>1) { // More than a quaver left
 				switch(mwr.getBeatsLeft()-theMelody->getAnacrusis()*2) {
 					case 1: mwr.setLen(8,d2); break;
 					case 2: mwr.setLen(4,d2); break;
 					case 3: mwr.setLen(4,d2); dot=1; break;
-					case 5: mwr.setLen(8,d2); mwr.output("r",d2); mwr.subtractBeats(8/mwr.getLength(),this,(!theNextChord) && doRepeatEnd); // DON't break;
+					case 5: mwr.setLen(8,d2); mwr.output("r",d2); mwr.subtractBeats(8/mwr.getLength(),this,(!theNextChord) && doRepeatEnd); // fall through
 					case 4: mwr.setLen(2,d2); break;
-					case 7: mwr.setLen(8,d2); mwr.output("r",d2); mwr.subtractBeats(8/mwr.getLength(),this,(!theNextChord) && doRepeatEnd); // DON't break;
+					case 7: mwr.setLen(8,d2); mwr.output("r",d2); mwr.subtractBeats(8/mwr.getLength(),this,(!theNextChord) && doRepeatEnd); // fall through
 					case 6: mwr.setLen(2,d2); dot=1; break;
 					case 8: mwr.setLen(1,d2); break;
 					default: mwr.writeComment("Error in deciding final note length *****");
@@ -509,8 +509,9 @@ Boolean Chord::nextNeedsToAccent(Part part) const {
 	else return((getPassNote(part).intervalWith(getPart(part)).getValue()<i_third)?TRUE:FALSE);
 }
 
-// argsused is for TSR_VERSION to suppress warnings as to parameters not used
+#ifdef TSR_VERSION
 #pragma argsused
+#endif
 static void displayNoteOfChord(NoteOfChord n,int addToOctave) {
 #ifdef TSR_VERSION
 	;

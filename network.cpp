@@ -37,7 +37,7 @@ int useYourTimeUsefully() {
 #ifdef TSR_VERSION
 	needsToRemoveTSR=0; revokeTime();
 #endif
-	char* fname=filenameMatching(MEL_UNFINISHED_LIT WILDCARD_LIT MEL_EXTENTION);
+	char* fname=filenameMatching(MEL_UNFINISHED_LIT WILDCARD_LIT MEL_EXTENSION);
 	if (fname && checkFileDate(fname)) {
 		char* f2=getFilename2(fname);
 		if (!renameFile(fname,f2)) {
@@ -58,7 +58,7 @@ int useYourTimeUsefully() {
 				statusReport("Task %s completed",fname);
 			} else { fclose(file); deleteFile(f2); }
 		}
-		else statusReport("Error - failed to obtain task %s",fname);
+		else statusReport("Error - failed to obtain task %s from " MEL_UNFINISHED_LIT WILDCARD_LIT MEL_EXTENSION,fname);
 	} else return(0);
 	return(1);
 }
@@ -76,7 +76,7 @@ char* getFilename(int number,Boolean complete) {
 #ifdef TSR_VERSION
 	strchr(fName,DIR_SEPARATOR)?(strrchr(fName,DIR_SEPARATOR)+1):
 #endif
-	fName,"%s%c%d"MEL_EXTENTION,
+	fName,"%s%c%d" MEL_EXTENSION,
 	complete?FINISHED_DIR:UNFINISHED_DIR,complete?MEL_FINISHED_CHAR:MEL_UNFINISHED_CHAR,number);
 	return(fName);
 }
@@ -94,7 +94,11 @@ char* filenameMatching(char* wildcard) {
 	internal,wildcard);
 	struct find_t ffblk;
 	if (_dos_findfirst(wildcard,_A_NORMAL,&ffblk)) return(NULL);
+#ifdef SINGLE_DIRECTORY
+	strcpy(internal,ffblk.name);
+#else
 	strcpy((strrchr(internal,DIR_SEPARATOR)?(strrchr(internal,DIR_SEPARATOR)+1):internal),ffblk.name);
+#endif
 	return(internal);
 }
 #endif
