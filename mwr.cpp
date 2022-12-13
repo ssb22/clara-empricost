@@ -106,10 +106,10 @@ void Mwr::printDoubleBar() {
 	fprintf(theStream,"$i-%d",randomMIDIinst(getPart()));
 }
 
-void Mwr::output(char* toOutput,int &dot) {
+void Mwr::output(const char* toOutput,int &dot) {
 	char o2[3]; strcpy(o2,toOutput); strupr(o2);
 	if (o2[0]>='A' && o2[0]<'A'+tonesInOctave) {
-		if (accType[o2[0]-'A']==toOutput[1]) toOutput[1]=o2[1]=0; // Surplus accidental
+		if (accType[o2[0]-'A']==toOutput[1]) {o2[0]=toOutput[0];toOutput=o2;o2[1]=0; } // Surplus accidental
 		else accType[o2[0]-'A']=toOutput[1];
 	}
 	// Do the doubling first so that octave signs don't get in the way of ornaments
@@ -154,7 +154,7 @@ void Mwr::setOctave(Octave octave) {
 }
 
 void Mwr::initAccidentals() {
-	for (int lp=0; lp<tonesInOctave; lp++) accType[lp]='n';
+	int lp; for (lp=0; lp<tonesInOctave; lp++) accType[lp]='n';
 	int offset=(theKey.getAccidentalType()=='#')?('F'-'A'):('B'-'A');
 	for (lp=0; lp<theKey.getNumAccidentals(); lp++) {
 		accType[offset]=theKey.getAccidentalType();

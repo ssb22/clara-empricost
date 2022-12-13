@@ -27,7 +27,7 @@
 #include "protect.h"
 
 char* getFilename(int number,Boolean complete);
-char* getFilename2(char* fname) {
+char* getFilename2(const char* fname) {
 	static char f2[MAXPATH]; strcpy(f2,fname);
 	*(strrchr(f2,DIR_SEPARATOR)?(strrchr(f2,DIR_SEPARATOR)+1):f2)=MEL_TEMP_CHAR; return(f2);
 }
@@ -37,7 +37,7 @@ int useYourTimeUsefully() {
 #ifdef TSR_VERSION
 	needsToRemoveTSR=0; revokeTime();
 #endif
-	char* fname=filenameMatching(MEL_UNFINISHED_LIT WILDCARD_LIT MEL_EXTENSION);
+	const char* fname=filenameMatching(MEL_UNFINISHED_LIT WILDCARD_LIT MEL_EXTENSION);
 	if (fname && checkFileDate(fname)) {
 		char* f2=getFilename2(fname);
 		if (!renameFile(fname,f2)) {
@@ -82,7 +82,7 @@ char* getFilename(int number,Boolean complete) {
 }
 
 #ifdef RUNNING_ON_DOS
-char* filenameMatching(char* wildcard) {
+char* filenameMatching(const char* wildcard) {
 	static char internal[MAXPATH];
 #ifdef TSR_VERSION
 	strcpy(internal,_argv[0]);

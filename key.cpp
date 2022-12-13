@@ -26,7 +26,7 @@ int majorKey[tonesInOctave]={0,2,4,5,7,9,11};
 int minorKey[tonesInOctave]={0,2,3,5,7,8,11}; // Harmonic minor
 int toneTranspose[semitonesInOctave]={0,1,1,2,2,3,3,4,5,5,6,6}; // Amount to add to tone number (C, D, E, etc.) in each key
 int keyNumAccidentals[semitonesInOctave]={0,5,2,3,4,1,6,1,4,3,2,5}; // Number of accidentals in each key
-char* keyAccidentalType="#-#-#-##-#-#"; // Type of each key (sharp or flat)
+const char* keyAccidentalType="#-#-#-##-#-#"; // Type of each key (sharp or flat)
 int minToneTranspose[semitonesInOctave]={0,0,1,1,2,3,3,4,4,5,6,6};
 
 inline int modTranspose(int theTranspose) { int r=(theTranspose+semitonesInOctave*2)%semitonesInOctave; if (r>semitonesInOctave/2) r-=semitonesInOctave; return(r); }

@@ -34,7 +34,7 @@ int Melody::nextMelodyNumber=0;
 
 int useYourTimeUsefully();
 char* getFilename(int number,Boolean complete);
-char* getFilename2(char* fname);
+char* getFilename2(const char* fname);
 
 void Melody::deleteAllFiles() {
 	for (int lp=0; lp<nextMelodyNumber; lp++)

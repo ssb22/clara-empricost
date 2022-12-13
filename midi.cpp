@@ -49,8 +49,8 @@ static char shuffle[NUM_MIDI_INSTS];
 int randomMIDIinst(Part part) {
 	static int doneBefore=0;
 	if (!doneBefore) {
-		doneBefore=1;
-		for (int lp=0; lp<NUM_MIDI_INSTS; lp++) shuffle[lp]=lp;
+		doneBefore=1; int lp;
+		for (lp=0; lp<NUM_MIDI_INSTS; lp++) shuffle[lp]=lp;
 		pushRNG();
 		for (lp=0; lp<NUM_MIDI_INSTS; lp++) {
 			int s1=RNGrandom(NUM_MIDI_INSTS),s2=RNGrandom(NUM_MIDI_INSTS);

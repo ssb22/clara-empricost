@@ -46,7 +46,7 @@ void report2(char* report,char* r2,char* emailDir) {
 }
 #endif
 
-char* binarySignature=BIN_SIG_LIT;
+const char* binarySignature=BIN_SIG_LIT;
 
 #ifndef SETUP_ONLY_VERSION
 #define SIG_NOT_MATCH_MSG "SECURITY ALERT: \aBinary signature does not match"
@@ -59,7 +59,7 @@ char lastReport[80];
 #define screen ((unsigned int*)MK_FP(0xB800,0))
 #endif
 #endif
-void statusReport(char* report,char* r2) {
+void statusReport(const char* report,const char* r2) {
 #ifndef TSR_VERSION
 #ifdef RUNNING_ON_DOS
 	if(wherex()>1)
@@ -88,7 +88,7 @@ int authentic(FILE* file) {
 	} return(1);
 }
 
-int checkFileDate(char* filename) {
+int checkFileDate(const char* filename) {
 #ifdef RUNNING_ON_DOS
 	struct find_t ffblk,min,max;
 	_dos_findfirst(filename,0,&ffblk);

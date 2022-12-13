@@ -44,7 +44,7 @@ unsigned RNGrandom(unsigned possibilities) {
 #ifdef FAST_RANDOM
 	return(randomNumber()%possibilities);
 #else
-	srand(r); unsigned or=r; r=rand(); if (r==or) r++; // Just in case!
+	srand(r); unsigned lastR=r; r=rand(); if (r==lastR) r++; // Just in case!
 	return(r%possibilities);
 #endif
 }
@@ -95,7 +95,7 @@ PackOfCards::PackOfCards(int numCards) : theNumCards(numCards) {
 }
 
 void PackOfCards::reShuffle() {
-	for (int lp=0; lp<theNumCards; lp++) theCards[lp]=lp;
+	int lp; for (lp=0; lp<theNumCards; lp++) theCards[lp]=lp;
 	for (lp=0; lp<theNumCards; lp++) {
 		int swapWith=lp+RNGrandom(theNumCards-lp);
 		int temp=theCards[lp]; theCards[lp]=theCards[swapWith];

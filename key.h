@@ -38,7 +38,7 @@ extern int minorKey[tonesInOctave];
 extern int toneTranspose[semitonesInOctave]; // Amount to add to tone number (C, D, E, etc.) in each key
 extern int minToneTranspose[semitonesInOctave];
 extern int keyNumAccidentals[semitonesInOctave]; // Number of accidentals in each key
-extern char* keyAccidentalType; // Type of each key (sharp or flat)
+extern const char* keyAccidentalType; // Type of each key (sharp or flat)
 
 enum RelatedKeyType { RK_RELATIVE,RK_DOMINANT,RK_SUBDOMINANT/*,RK_ENHARMONIC*/,
 NUM_REL_KEY_TYPE };

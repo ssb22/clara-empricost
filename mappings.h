@@ -116,7 +116,7 @@ using namespace std;
 
 #define deleteFile remove
 #define renameFile rename /* Returns 0 on sucess */
-char* filenameMatching(char* wildcard);
+char* filenameMatching(const char* wildcard);
 #ifndef __TCPLUSPLUS__
 char* upperCase(char* string);
 #define strupr upperCase

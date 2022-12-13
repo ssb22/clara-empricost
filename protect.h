@@ -23,13 +23,13 @@
 #include <stdio.h>
 #include "mappings.h"
 // Code itself is signature: Won't work due to number of versions
-extern char* binarySignature;
+extern const char* binarySignature;
 #define BIN_SIG_LIT "\aI am a file.  Leave me alone.\n\r\x1A\x0\xc\x1f"
 #define BINARY_SIG_SIZE 37 /* Including 0 at end */
 int authentic(FILE* file); // Check binary signature, return 1 if fine or trigger alert if not
 inline void makeAuthentic(FILE* file) { fwrite(binarySignature,BINARY_SIG_SIZE,1,file); }
-void statusReport(char* report,char* r2=NULL);
-int checkFileDate(char* filename); // If invalid, deletes file & returns 0
+void statusReport(const char* report,const char* r2=NULL);
+int checkFileDate(const char* filename); // If invalid, deletes file & returns 0
 //void netwareMap(int drive,char* path); // drive is 0 default, 1=A ...
 #define netwareMap(drive,path)
 #endif

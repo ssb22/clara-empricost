@@ -155,7 +155,7 @@ void saveSettings() {
 }
 
 #ifdef __unix__
-char* filenameMatching(char* wildcard) {
+char* filenameMatching(const char* wildcard) {
   DIR* dp=opendir ("./");
   if(dp) {
     int found=0;

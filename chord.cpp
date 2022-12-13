@@ -370,7 +370,7 @@ Note Chord::getPassNote(Part part) const {
 #include <string.h>
 
 #ifndef TSR_VERSION
-static char* suspensionText[]={"","(S susp)","(A susp)","(T susp)","(B susp)",
+static const char* suspensionText[]={"","(S susp)","(A susp)","(T susp)","(B susp)",
 "(S/A susp)","(A/T susp)","(T/B susp)"};
 
 void Chord::printReportTo(FILE* file) const {

@@ -35,7 +35,7 @@ public:
 	Key getKey() const { return(theKey); }
 	void setBeatsLeft(unsigned char beatsLeft) { theBeatsLeft=beatsLeft; }
 	void printDoubleBar();
-	void output(char* toOutput,int &dot);
+	void output(const char* toOutput,int &dot);
 	void setPart(Part part) { if (thePart!=part) { thePart=part; initYet=FALSE; } }
 	Part getPart() const { return(thePart); }
 	int getBeatsLeft() const { return(theBeatsLeft); }
@@ -44,8 +44,8 @@ public:
 	void restBeats(int beats=0);
 	int getLength() const { return(theLength); }
 	void setOctave(Octave octave);
-	void writeComment(char* comment) { fprintf(theStream,"; %s\n",comment); }
-	void directOutput(char* output) { fprintf(theStream,"%s",output); }
+	void writeComment(const char* comment) { fprintf(theStream,"; %s\n",comment); }
+	void directOutput(const char* output) { fprintf(theStream,"%s",output); }
 	void setIn68(Boolean newIn68) { in68=newIn68; }
 protected:
 	Part thePart; Key theKey;

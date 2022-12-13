@@ -169,7 +169,8 @@ int Chord::checkMelody(Part part) const {
 		if (leapInt.isDiminished() && (leapInt.getRoundedValue()==i_fourth || leapInt.getRoundedValue()==i_seventh)) return(1); // #36 rejector with 1536 calls
 		// // Avoid too many consecutive leaps (3+ here; could also be 4+)
 		Chord* c=theLastChord; int noOfLeaps=0,noDescendingScale=0,noAscendingScale=0;
-		for (int prevChord=1; prevChord<=3; prevChord++) {
+		int prevChord;
+		for (prevChord=1; prevChord<=3; prevChord++) {
 			if (c->getLastChord()==NULL) break;
 			Interval li(c->getLastChord()->getPart(part),c->getPart(part));
 			if (li.getValue()>=i_third) noOfLeaps++;

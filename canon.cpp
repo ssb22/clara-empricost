@@ -29,7 +29,7 @@ Canon::Canon(NumBeats beatsPerBar,KeyRef key,int barsInPhrase) : theBarsInPhrase
 
 #ifndef SETUP_ONLY_VERSION
 void Canon::outputToMwr(Mwr &mwr) {
-	for (int lp=P_BAS; lp>=P_SOP; lp--) theOpenMelody->outputToMwr(mwr,lp==P_BAS,0,NULL,FALSE,0,(lp<=mwr.getPart() || (mwr.getPart()==P_PEDAL && lp==P_SOP))?FALSE:TRUE);
+	int lp; for (lp=P_BAS; lp>=P_SOP; lp--) theOpenMelody->outputToMwr(mwr,lp==P_BAS,0,NULL,FALSE,0,(lp<=mwr.getPart() || (mwr.getPart()==P_PEDAL && lp==P_SOP))?FALSE:TRUE);
 	for (lp=P_SOP; lp<=P_BAS; lp++) theCloseMelody->outputToMwr(mwr,1,1,NULL,(lp==P_ALT)?TRUE:FALSE,0,(lp<=mwr.getPart() || mwr.getPart()==P_PEDAL)?FALSE:TRUE);
 }
 #endif
