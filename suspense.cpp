@@ -49,6 +49,7 @@ int Chord::initPassNotes(int combination) {
 					case P_ALT: if (getTenor().isHigherThan(thePassingNotes[l])==TRUE || getSoprano().isHigherThan(thePassingNotes[l])==FALSE) return(0); break;
 					case P_TEN: if (getBass().isHigherThan(thePassingNotes[l])==TRUE || getAlto().isHigherThan(thePassingNotes[l])==FALSE) return(0); break;
 					case P_BAS: if (getTenor().isHigherThan(thePassingNotes[l])==FALSE) return(0); break;
+                default: ;
 				}
 				break;
 		}

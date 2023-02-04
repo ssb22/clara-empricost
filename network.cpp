@@ -72,11 +72,11 @@ char* getFilename(int number,Boolean complete) {
 #ifdef TSR_VERSION
 	strcpy(fName,_argv[0]);
 #endif
-	sprintf(
+	snprintf(
 #ifdef TSR_VERSION
 	strchr(fName,DIR_SEPARATOR)?(strrchr(fName,DIR_SEPARATOR)+1):
 #endif
-	fName,"%s%c%d" MEL_EXTENSION,
+	fName,MAXPATH,"%s%c%d" MEL_EXTENSION,
 	complete?FINISHED_DIR:UNFINISHED_DIR,complete?MEL_FINISHED_CHAR:MEL_UNFINISHED_CHAR,number);
 	return(fName);
 }

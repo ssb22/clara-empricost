@@ -284,6 +284,7 @@ Note Chord::realNote(NoteOfChord note,Octave octave,Figure figure,int addOne) co
 		case N_THREE2: octave++; /* fall through */ case N_THREE1: if (figure+incThird>=possFigs) octave++; deg=(DegreeOfScale)((figure+incThird)%possFigs); break;
 		case N_FIVE2: octave++; /* fall through */ case N_FIVE1: if (figure+incFifth>=possFigs) octave++; deg=(DegreeOfScale)((figure+incFifth)%possFigs); break;
 //		default: printf("Note=%d\n",note); assert(0);
+    default: ;
 	}
 	if (((DegreeOfScale)((deg+(addOne!=0))%possFigs))<deg) octave++;
 	deg=(DegreeOfScale)((deg+(addOne!=0))%possFigs);
@@ -377,7 +378,7 @@ void Chord::printReportTo(FILE* file) const {
 	if (theLastChord && getBeatStrength()!=S_1ST_BEAT) theLastChord->printReportTo(file);
 	static char passNoteString[50]; passNoteString[0]=0;
 	if (havePassingNotes[0]!=P_UNDEFINED || havePassingNotes[1]!=P_UNDEFINED) {
-		sprintf(passNoteString,"(Unessential in %c","SATB?"[havePassingNotes[0]]);
+		snprintf(passNoteString,sizeof(passNoteString),"(Unessential in %c","SATB?"[havePassingNotes[0]]);
 		if (nextNeedsToAccent(havePassingNotes[0])==TRUE) strcat(passNoteString,"(accented)");
 		if (havePassingNotes[1]!=P_UNDEFINED) {
 			strcat(passNoteString,"/");

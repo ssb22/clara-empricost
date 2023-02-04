@@ -44,17 +44,17 @@ IR_SOP,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,IR_PED,0,0,0,0,0,0,0,0,0,0,0,0,
 IR_PED,IR_ALT,0,IR_SOP,0,0,IR_PED,0,IR_PED,0,0,0,0,0,0,0,0,0
 };
 
-static char shuffle[NUM_MIDI_INSTS];
+static char instrument_shuffle[NUM_MIDI_INSTS];
 
 int randomMIDIinst(Part part) {
 	static int doneBefore=0;
 	if (!doneBefore) {
 		doneBefore=1; int lp;
-		for (lp=0; lp<NUM_MIDI_INSTS; lp++) shuffle[lp]=lp;
+		for (lp=0; lp<NUM_MIDI_INSTS; lp++) instrument_shuffle[lp]=lp;
 		pushRNG();
 		for (lp=0; lp<NUM_MIDI_INSTS; lp++) {
 			int s1=RNGrandom(NUM_MIDI_INSTS),s2=RNGrandom(NUM_MIDI_INSTS);
-			int temp=shuffle[s1]; shuffle[s1]=shuffle[s2]; shuffle[s2]=temp;
+			int temp=instrument_shuffle[s1]; instrument_shuffle[s1]=instrument_shuffle[s2]; instrument_shuffle[s2]=temp;
 		}
 		popRNG();
 	}
@@ -67,7 +67,7 @@ int randomMIDIinst(Part part) {
 		default: return(0);
 	}
 	int lp=RNGrandom(NUM_MIDI_INSTS); while (1) {
-		if (instrumentRange[shuffle[lp]]&bit) return(shuffle[lp]);
+		if (instrumentRange[instrument_shuffle[lp]]&bit) return(instrument_shuffle[lp]);
 		lp=(lp+1)%NUM_MIDI_INSTS;
 	}
 }

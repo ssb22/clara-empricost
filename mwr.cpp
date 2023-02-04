@@ -50,7 +50,7 @@ Mwr::Mwr(FILE* stream,Octave octave,int length,int l2,int movementNumber) {
 	theStream=stream; theOctave=octave; theLength=length;
 	theL2=l2;
 	if (movementNumber) fprintf(theStream,"; Movement %d\n",movementNumber);
-	fprintf(theStream,"~x0litt.chr\n$x0,6Page ª\n$-$c%di3,5y9#z3u5,0,-8,6w16h12m0\n",(movementNumber<=MAX_MOVEMENTS)?metMark[movementNumber-1]:120);
+	fprintf(theStream,"~x0litt.chr\n$x0,6Page \xAA\n$-$c%di3,5y9#z3u5,0,-8,6w16h12m0\n",(movementNumber<=MAX_MOVEMENTS)?metMark[movementNumber-1]:120);
 }
 
 extern unsigned origRandNoSeed;

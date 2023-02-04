@@ -45,6 +45,7 @@ Key Key::getRelatedKey(RelatedKeyType rel) const {
 /*		case RK_ENHARMONIC:
 			k=new Key((isMajor()==TRUE)?FALSE:TRUE,getTranspose());
 			break;*/
+    default: ;
 	}
 	Key rVal=*k; delete k; return(rVal);
 }

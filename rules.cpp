@@ -96,6 +96,7 @@ int Chord::checkRange(const Note &note,Part part) const {
 		case P_ALT: upper=&altHigh; lower=&altLow; break;
 		case P_TEN: upper=&tenHigh; lower=&tenLow; break;
 		case P_BAS: upper=&basHigh; lower=&basLow;
+    default: return 0;
 	}
 	if (note.isHigherThan(upper) || lower->isHigherThan(note)) return(1); // #5 rejector with 727949 calls
 	return(0);

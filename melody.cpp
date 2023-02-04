@@ -221,7 +221,7 @@ void Melody::outputToMwr(Mwr &mwr,int needToInitPart,int needToEndPart,const Key
 		while ((file=fopen(getFilename(theNumber,TRUE),"rb"))==NULL || !authentic(file)) {
 			if (file) { fclose(file); deleteFile(getFilename(theNumber,TRUE)); }
 			if (!useYourTimeUsefully()) {
-				cout << "Error - no tasks available to this workstation, waiting for " << theNumber << endl;
+				cout << "No tasks available to this workstation, waiting for " << theNumber << endl;
 #ifndef TSR_VERSION
                 sleep(1);
 				if (aKeyIsPressed()) { // Exit without saving anything
