@@ -111,9 +111,7 @@ void Mwr::output(const char* toOutput,int &dot) {
 	if (o2[0]>='A' && o2[0]<'A'+tonesInOctave) {
 		if (accType[o2[0]-'A']==toOutput[1]) {o2[0]=toOutput[0];toOutput=o2;o2[1]=0; } // Surplus accidental
 		else accType[o2[0]-'A']=toOutput[1];
-	}
-	// Do the doubling first so that octave signs don't get in the way of ornaments
-	if (o2[0]>='A' && o2[0]<'A'+tonesInOctave) {
+		// Do the doubling first so that octave signs don't get in the way of ornaments
 		/*if (thePart==P_BAS) { // Double up an 8ve lower staccato
 			fprintf(theStream,"<%s",o2); if (dot) fputc('.',theStream);
 			fprintf(theStream,"&>");
