@@ -1,3 +1,4 @@
 # -*- mode: makefile -*-
 test:
 	make # at least check it still compiles
+.PHONY: test
