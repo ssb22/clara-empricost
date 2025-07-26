@@ -1,0 +1,30 @@
+name: custom test
+run-name: custom test
+on:
+  workflow-dispatch:
+    inputs:
+      rng:
+        description: Random number seed
+        default: 0
+      bars:
+        description: Bars per phrase
+        default: 4
+jobs:
+  Test-Run:
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Compile
+        run: make -C ${{ github.workspace }}
+      - name: Run
+        run: |
+          cd ${{ github.workspace }}
+          (echo ${{ inputs.rng }} ; echo ${{ inputs.bars }})|./clara&export M=$!; sleep 10;./clara&export A=$!;sleep 3;./clara&export B=$!;sleep 3;./clara&export C=$!;sudo apt update && sudo apt install lilypond timidity fluid-soundfont-gm ffmpeg btyacc -y && wget https://raw.githubusercontent.com/ssb22/mwr2ly/refs/heads/master/mwr2ly.y https://raw.githubusercontent.com/ssb22/mwr2ly/refs/heads/master/midi-add-depth.py && btyacc mwr2ly.y && g++ -Wno-write-strings y[._]tab.c -o mwr2ly;wait $M;kill $A $B $C
+      - name: Convert output
+        run: for N in *.mwr; do N=$(echo $N|sed -e s/.mwr$//); ./mwr2ly < $N.mwr > $N.ly && lilypond $N.ly && python3 midi-add-depth.py $N.midi $N.mid && timidity -Ow -o - $N.mid | ffmpeg -i - $N.mp3; done
+      - name: Upload output
+        uses: actions/upload-artifact@v4
+        with:
+          name: output
+          path: ${{ github.workspace }}/*.mwr ${{ github.workspace }}/*.ly ${{ github.workspace }}/*.pdf ${{ github.workspace }}/*.mid ${{ github.workspace }}/*.mp3
