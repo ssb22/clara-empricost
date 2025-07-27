@@ -22,7 +22,9 @@ jobs:
           cd ${{ github.workspace }}
           (echo ${{ inputs.rng }} ; echo ${{ inputs.bars }})|./clara&export M=$!; sleep 10;./clara&sleep 3;./clara&sleep 3;./clara&sudo apt update && sudo apt install lilypond timidity fluid-soundfont-gm ffmpeg btyacc -y && wget https://raw.githubusercontent.com/ssb22/mwr2ly/refs/heads/master/mwr2ly.y https://raw.githubusercontent.com/ssb22/mwr2ly/refs/heads/master/midi-add-depth.py && btyacc mwr2ly.y && g++ -Wno-write-strings y[._]tab.c -o mwr2ly;wait $M
       - name: Convert output
-        run: for N in *.mwr; do N=$(echo $N|sed -e s/.mwr$//); ./mwr2ly < $N.mwr > $N.ly && lilypond $N.ly && python3 midi-add-depth.py $N.midi $N.mid && timidity -Ow -o - $N.mid | ffmpeg -i - $N.mp3; done
+        run: |
+          cd ${{ github.workspace }}
+          for N in *.mwr; do N=$(echo $N|sed -e s/.mwr$//); ./mwr2ly < $N.mwr > $N.ly && lilypond $N.ly && python3 midi-add-depth.py $N.midi $N.mid && timidity -Ow -o - $N.mid | ffmpeg -i - $N.mp3; done
       - name: Upload output
         uses: actions/upload-artifact@v4
         with:
