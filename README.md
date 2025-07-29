@@ -21,6 +21,8 @@ The sound quality of MIDI files will depend to a large extent on that of your so
 Running
 =======
 
+To test on GutHub Action Runners (as of 2025 a 4-movement piece typically takes less than 4 minutes on their 4-core 4GHz ARM runners, including setup and synthesis), fork this repository on GitHub and you should be able to request a run under Actions.  This is set to produce MWR, Lilypond, PDF, MIDI and MP3 output in the zip-downloadable Artifact of the run, although it might not be your preferred soundfont.
+
 To compile on modern Unix systems: `make`
 
 Then run: `./clara`

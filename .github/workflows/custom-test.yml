@@ -24,14 +24,14 @@ jobs:
       - name: Convert output
         run: |
           cd ${{ github.workspace }}
-          for N in *.MWR; do N=$(echo $N|sed -e s/.MWR$//); ./mwr2ly < $N.MWR > $N.ly && lilypond $N.ly && python3 midi-add-depth.py $N.midi $N.mid && timidity -Ow -o - $N.mid | ffmpeg -i - $N.mp3; done
+          for N in *.MWR; do P=$(head -1 $N|sed 's/; Movement /mvt-/'); mv $N $P.mwr; ./mwr2ly < $P.mwr > $P.ly && lilypond $P.ly && python3 midi-add-depth.py $P.midi $P.mid && timidity -Ow -o - $P.mid | ffmpeg -i - $P.mp3; done
       - name: Upload output
         uses: actions/upload-artifact@v4
         with:
           name: output
           path: |
-            ${{ github.workspace }}/*.MWR
-            ${{ github.workspace }}/*.ly
-            ${{ github.workspace }}/*.pdf
-            ${{ github.workspace }}/*.mid
-            ${{ github.workspace }}/*.mp3
+            ${{ github.workspace }}/mvt-*.mwr
+            ${{ github.workspace }}/mvt-*.ly
+            ${{ github.workspace }}/mvt-*.pdf
+            ${{ github.workspace }}/mvt-*.mid
+            ${{ github.workspace }}/mvt-*.mp3
