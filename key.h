@@ -69,7 +69,7 @@ public:
 	Key getRandomRelatedKey() const { return(getRelatedKey((RelatedKeyType)RNGrandom(NUM_REL_KEY_TYPE))); }
 	Boolean containsSemitone(int semitone) const; // In the range 0-11, used in NOTE.H
 	void printReportTo(FILE* file) const;
-	int getReportLength() const { return(7); }
+	int getReportLength() const { return(8); }
 protected:
 	// getModTranspose returns as if relative major for minor keys; getMajModTranspose doesn't
 	int getModTranspose() const { return(((theTranspose+semitonesInOctave*(theTranspose<0))+3*(isMajor()==FALSE))%semitonesInOctave); }

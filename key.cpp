@@ -59,7 +59,7 @@ Boolean Key::containsSemitone(int semitone) const {
 void Key::printReportTo(FILE* file) const {
 	// If change this output, change getReportLength also
 	char tt=(isMajor()?toneTranspose:minToneTranspose)[getMajModTranspose()]+'C'; if (tt>'G') tt-=tonesInOctave;
-	fprintf(file,"%c%c%s",tt,(isMajor()?" b b  # b b ":" # #  # # b ")[getMajModTranspose()],isMajor()?"major":"minor");
+	fprintf(file,"%c%c%s ",tt,(isMajor()?" b b  # b b ":" # #  # # b ")[getMajModTranspose()],isMajor()?"major":"minor");
 }
 
 /*
