@@ -20,7 +20,7 @@ jobs:
       - name: Run
         run: |
           cd ${{ github.workspace }}
-          (echo ${{ inputs.rng }} ; echo ${{ inputs.bars }})|./clara&export M=$!; sleep 10;./clara&sleep 3;./clara&sleep 3;./clara&sudo apt update && sudo apt install lilypond timidity fluid-soundfont-gm ffmpeg btyacc -y && git clone --depth 1 https://github.com/ssb22/mwr2ly && mv mwr2ly/mwr2ly.y mwr2ly/midi-add-depth.py . && btyacc mwr2ly.y && g++ -Wno-write-strings y[._]tab.c -o mwr2ly;wait $M
+          (echo ${{ inputs.rng }} ; echo ${{ inputs.bars }})|./clara&export M=$!; sleep 10;./clara&sleep 3;./clara&sleep 3;./clara&sudo apt update && sudo apt install lilypond timidity fluid-soundfont-gm ffmpeg btyacc -y && git clone --depth 1 https://github.com/ssb22/mwr2ly && mv mwr2ly/mwr2ly.y mwr2ly/midi-add-depth.py . && rm -rf mwr2ly && btyacc mwr2ly.y && g++ -Wno-write-strings y[._]tab.c -o mwr2ly;wait $M
           # (use git clone rather than wget as that can 429 if too many jobs started at once even though same company)
       - name: Convert output
         run: |
