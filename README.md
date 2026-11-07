@@ -1,7 +1,7 @@
 # clara-empricost
-Automatic music composition experiment 1996-97 from http://ssb22.user.srcf.net/clara
+Automatic music composition experiment 1996-97 from https://ssb22.user.srcf.net/clara
 
-(also mirrored at http://ssb22.gitlab.io/clara just in case)
+(also [mirrored on GitLab Pages](https://ssb22.gitlab.io/clara) just in case)
 
 Clara Empricost stands for “Condition List Action Rejection Algorithm for the Evaluation of Music at Pseudo-Random Idea COnstruction STage”.  It is a C++ program that is supposed to generate music.  I wrote it at school in 1996 as an experiment; it generated some interest in the now-defunct Cambridge University New Music Society toward the end of 1997 and has since been featured in a Generative Creativity course at Sussex University.
 
@@ -35,7 +35,7 @@ Then run: `./clara`
 
 To compile on other systems, you may have to modify `mappings.h`.
 
-The program should then prompt you for a random number seed and the number of bars to write in each phrase, and then begin displaying things to indicate that it’s doing something.  (Don’t try to log all this as the log can get very big.) When finished, it should leave the piece in a file with the extension .MWR, which is an input file to [Manuscript Writer](http://ssb22.user.srcf.net/mwrhome/).  On modern systems you should be able to use `mwr2ly` to convert this to Lilypond.
+The program should then prompt you for a random number seed and the number of bars to write in each phrase, and then begin displaying things to indicate that it’s doing something.  (Don’t try to log all this as the log can get very big.) When finished, it should leave the piece in a file with the extension .MWR, which is an input file to [Manuscript Writer](https://ssb22.user.srcf.net/mwrhome/).  On modern systems you should be able to use `mwr2ly` to convert this to Lilypond.
 From there you can convert to MIDI and/or printed score.
 
 If the program takes excessively long or says “Unable to find solution” then this might mean it has chosen a bad combination of keys for the movements and you should try a different random number seed.
