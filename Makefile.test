@@ -1,4 +1,4 @@
 # -*- mode: makefile -*-
 test:
-	make # at least check it still compiles
+	make -C src # at least check it still compiles
 .PHONY: test

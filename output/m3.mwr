@@ -1,0 +1,256 @@
+; Movement 3
+~x0litt.chr
+$-$c96i3,5y9#z3u5,0,-8,6w16h12m0
+$x0,6,0,TMovement 3
+$x0,4,0,AClara Empricost 1996
+$x0,3,0,CPrinted on Manuscript Writer
+P1$i-7J3,4K3#>>e&<e>f&<fL8>d&<d>c&<c ;1a(Unessential in T) A major4a 2a(Unessential in S/A) 
+L4>c&<c>e&<e>e&<e ;6b 5b(Unessential in T/A) 1a(Unessential in B) 
+>d&<d>c&<c<>b&<b
+ ;4a(Unessential in B) 6a(Unessential in B) 2a 
+>>f&<f<>a&<a>a&<a ;6b 1a(Unessential in T/A) 4a(cad) 
+L8>a&<a>>d&<dL4>d&<dL8>c&<c>f&<f ;4a(Unessential in S) A major2a(Unessential in B) 6b(Unessential in S) 
+L4>f&<f>d&<d<>f&<f ;4a 7b 6a(Unessential in B) 
+>g&<g>a&<aL8>>c&<c<>b&<b
+ ;5a(Unessential in T) 4b 1a(Unessential in S) 
+L2>b.&<b. ;5a(cad) 
+L4>>e&<e>f&<fL8>d&<d>c&<c ;1a(Unessential in T) A major4a 2a(Unessential in S/A) 
+L4>c&<c>e&<e>e&<e ;6b 5b(Unessential in T/A) 1a(Unessential in B) 
+>d&<d>c&<c<>b&<b
+ ;4a(Unessential in B) 6a(Unessential in B) 2a 
+>>f&<f<>a&<a>a&<a ;6b 1a(Unessential in T/A) 4a(cad) 
+>g&<g>a&<aL8>g&<g>f&<f ;5a(Unessential in T/A) A major1b(Unessential in S(accented)) 2b 
+>>c&<c>e&<eL4>c&<c>d&<d ;3a(Unessential in S) 6a 2a(Unessential in B) 
+L8<>a&<a>b&<bL4>b&<bL8>f&<f>a&<a
+ ;1b(Unessential in T/S) 2b 4a(Unessential in B/S) 
+L2>a.&<a. ;1a(cad) 
+L4>b&<b>a&<a>a&<a ;5b A major1a 5a(Unessential in T) - Modulating to G major
+L8>e&<e>f&<fL4>gn&<gn>b&<b ;6a(Unessential in S) 6a 1a 
+>a&<a>gn&<gn==>>cn&<cn
+ ;2b(Unessential in T) 1c 4b(Unessential in T) 
+>gn&<gnL8<>b.&<b.L16>>cn&<cnL4>c&<c ;6a(Unessential in T) 1a(Unessential in A/S) 4a(cad) 
+<>b&<b>>cn&<cn<>gn&<gn ;6b(Unessential in B) 2a 1b(Unessential in B) 
+L8>>e&<e<>b&<bL4>b&<b>a&<a ;6b(Unessential in B/S) 6a 2a 
+>gn&<gn>>d&<d>e&<e
+ ;1b(Unessential in T) 3a(Unessential in T) 5a(Unessential in S(accented)) - Modulating to A major
+L8>d&<drL2>c&<c ;6a(cad) 
+L4>e&<e>f&<fL8>d&<d>c&<c ;1a(Unessential in T) A major4a 2a(Unessential in S/A) 
+L4>c&<c>e&<e>e&<e ;6b 5b(Unessential in T/A) 1a(Unessential in B) 
+>d&<d>c&<c<>b&<b
+ ;4a(Unessential in B) 6a(Unessential in B) 2a 
+>>f&<f<>a&<a>a&<a ;6b 1a(Unessential in T/A) 4a(cad) 
+>g&<g>a&<aL8>g&<g>f&<f ;5a(Unessential in T/A) A major1b(Unessential in S(accented)) 2b 
+>>c&<c>e&<eL4>c&<c>d&<d ;3a(Unessential in S) 6a 2a(Unessential in B) 
+L8<>a&<a>b&<bL4>b&<bL8>f&<f>a&<a
+ ;1b(Unessential in T/S) 2b 4a(Unessential in B/S) 
+L2>a.&<a. ;1a(cad) 
+$|
+
+$i-71K4#L4>b&<b>a&<aL8>b&<b>>c&<c ;1a(Unessential in T) E major4a(Unessential in T/A) 3a(Unessential in S) 
+L4>c&<c>e&<e>c&<c ;6a(Unessential in B) 1c(Unessential in T) 4a(Unessential in T) 
+L2<>b&<bL8>>e&<e>f&<f
+ ;1a(Unessential in T) 1b(Unessential in A) 6a(Unessential in S) 
+>f&<f>e&<eL4>e&<e>c&<c ;5b(Unessential in S) 1a(Unessential in B) 4a(cad) 
+>c&<c<>b&<b>g&<g ;2a E major5b(Unessential in B/T) 1a(Unessential in T) 
+>>c&<c>e&<eL8>e&<e>f&<f ;6b 1b(Unessential in T/A) 4a(Unessential in S) 
+L4>f&<f>c&<c<>b&<b
+ ;2a(Unessential in A) 6b(Unessential in A) 1a(Unessential in A(accented)) 
+L2>a.&<a. ;4a(cad) 
+L4>b&<b>a&<aL8>b&<b>>c&<c ;1a(Unessential in T) E major4a(Unessential in T/A) 3a(Unessential in S) 
+L4>c&<c>e&<e>c&<c ;6a(Unessential in B) 1c(Unessential in T) 4a(Unessential in T) 
+L2<>b&<bL8>>e&<e>f&<f
+ ;1a(Unessential in T) 1b(Unessential in A) 6a(Unessential in S) 
+>f&<f>e&<eL4>e&<e>c&<c ;5b(Unessential in S) 1a(Unessential in B) 4a(cad) 
+>c&<c<>a&<aL8>a&<a>b&<b ;4a(Unessential in T) E major4b(Unessential in A) 2a(Unessential in T/S) 
+>b&<b>>c&<cL4>c&<c>f&<f ;1b(Unessential in S) 4a(Unessential in T) 5b 
+L8>e&<e<>b&<bL16>>c&<c>c&<cL8>d&<d>e&<e>c#&<c#
+ ;1a(Unessential in S) 2b(Unessential in S) 4a(Unessential in S) 
+L2<>e.&<e. ;1a(cad) 
+L8>>d&<d>e&<eL4>e&<e>c&<c ;5a(Unessential in S) E major4b(Unessential in B) 6a(Unessential in B) 
+>f&<fL8<>b.&<b.L16>>e&<eL4>cn&<cn ;5b(Unessential in A) 1a(Unessential in S) 5a(Unessential in T) - Modulating to Dbmajor
+>d-&<d->fn&<fn>d&<d
+ ;1a(Unessential in B) 6a 4b 
+>e-&<e->fn&<fn>d-&<d- ;5b(Unessential in B) 1a(Unessential in T) 4a(cad) 
+L8>e-&<e->g-&<g-L4>g&<g<>b-&<b- ;2a(Unessential in S/B) 2a(Unessential in T) 6b 
+>>cn&<cn>d-&<d-<>b-&<b- ;5a(Unessential in B) 6a 2a(Unessential in B) 
+>>fn&<fn>g-&<g-==L8>a-&<a->f#&<f#
+ ;6b(Unessential in B) 4a(Unessential in S(accented)) 5a - Modulating to E major
+L2>c.&<c. ;6a(cad) 
+L4<>b&<b>a&<aL8>b&<b>>c&<c ;1a(Unessential in T) E major4a(Unessential in T/A) 3a(Unessential in S) 
+L4>c&<c>e&<e>c&<c ;6a(Unessential in B) 1c(Unessential in T) 4a(Unessential in T) 
+L2<>b&<bL8>>e&<e>f&<f
+ ;1a(Unessential in T) 1b(Unessential in A) 6a(Unessential in S) 
+>f&<f>e&<eL4>e&<e>c&<c ;5b(Unessential in S) 1a(Unessential in B) 4a(cad) 
+>c&<c<>a&<aL8>a&<a>b&<b ;4a(Unessential in T) E major4b(Unessential in A) 2a(Unessential in T/S) 
+>b&<b>>c&<cL4>c&<c>f&<f ;1b(Unessential in S) 4a(Unessential in T) 5b 
+L8>e&<e<>b&<bL16>>c&<c>c&<cL8>d&<d>e&<e>c#&<c#
+ ;1a(Unessential in S) 2b(Unessential in S) 4a(Unessential in S) 
+L2<>e.&<e. ;1a(cad) 
+$|
+
+$i-72K3#L4>>e&<e>f&<fL8>d&<d>c&<c ;1a(Unessential in T) A major4a 2a(Unessential in S/A) 
+L4>c&<c>e&<e>e&<e ;6b 5b(Unessential in T/A) 1a(Unessential in B) 
+>d&<d>c&<c<>b&<b
+ ;4a(Unessential in B) 6a(Unessential in B) 2a 
+>>f&<f<>a&<a>a&<a ;6b 1a(Unessential in T/A) 4a(cad) 
+L8>a&<a>>d&<dL4>d&<dL8>c&<c>f&<f ;4a(Unessential in S) A major2a(Unessential in B) 6b(Unessential in S) 
+L4>f&<f>d&<d<>f&<f ;4a 7b 6a(Unessential in B) 
+>g&<g>a&<aL8>>c&<c<>b&<b
+ ;5a(Unessential in T) 4b 1a(Unessential in S) 
+L2>b.&<b. ;5a(cad) 
+L4>>e&<e>f&<fL8>d&<d>c&<c ;1a(Unessential in T) A major4a 2a(Unessential in S/A) 
+L4>c&<c>e&<e>e&<e ;6b 5b(Unessential in T/A) 1a(Unessential in B) 
+>d&<d>c&<c<>b&<b
+ ;4a(Unessential in B) 6a(Unessential in B) 2a 
+>>f&<f<>a&<a>a&<a ;6b 1a(Unessential in T/A) 4a(cad) 
+>g&<g>a&<aL8>g&<g>f&<f ;5a(Unessential in T/A) A major1b(Unessential in S(accented)) 2b 
+>>c&<c>e&<eL4>c&<c>d&<d ;3a(Unessential in S) 6a 2a(Unessential in B) 
+L8<>a&<a>b&<bL4>b&<bL8>f&<f>a&<a
+ ;1b(Unessential in T/S) 2b 4a(Unessential in B/S) 
+L2>a.&<a. ;1a(cad) 
+L4>b&<b>a&<a>a&<a ;5b A major1a 5a(Unessential in T) - Modulating to G major
+L8>e&<e>f&<fL4>gn&<gn>b&<b ;6a(Unessential in S) 6a 1a 
+>a&<a>gn&<gn==>>cn&<cn
+ ;2b(Unessential in T) 1c 4b(Unessential in T) 
+>gn&<gnL8<>b.&<b.L16>>cn&<cnL4>c&<c ;6a(Unessential in T) 1a(Unessential in A/S) 4a(cad) 
+<>b&<b>>cn&<cn<>gn&<gn ;6b(Unessential in B) 2a 1b(Unessential in B) 
+L8>>e&<e<>b&<bL4>b&<b>a&<a ;6b(Unessential in B/S) 6a 2a 
+>gn&<gn>>d&<d>e&<e
+ ;1b(Unessential in T) 3a(Unessential in T) 5a(Unessential in S(accented)) - Modulating to A major
+L8>d&<drL2>c&<c ;6a(cad) 
+L4>e&<e>f&<fL8>d&<d>c&<c ;1a(Unessential in T) A major4a 2a(Unessential in S/A) 
+L4>c&<c>e&<e>e&<e ;6b 5b(Unessential in T/A) 1a(Unessential in B) 
+>d&<d>c&<c<>b&<b
+ ;4a(Unessential in B) 6a(Unessential in B) 2a 
+>>f&<f<>a&<a>a&<a ;6b 1a(Unessential in T/A) 4a(cad) 
+>g&<g>a&<aL8>g&<g>f&<f ;5a(Unessential in T/A) A major1b(Unessential in S(accented)) 2b 
+>>c&<c>e&<eL4>c&<c>d&<d ;3a(Unessential in S) 6a 2a(Unessential in B) 
+L8<>a&<a>b&<bL4>b&<bL8>f&<f>a&<a
+ ;1b(Unessential in T/S) 2b 4a(Unessential in B/S) 
+L2>a.&<a. ;1a(cad) 
+$|
+
+$i-20P2$i-59J3,4L4edL8fe L4fL8edL4c faf
+ fL8ceL4d dff adc ede
+ L2g. L4edL8fe L4fL8edL4c faf
+ fL8ceL4d L8edL4ed eff e<b>d
+ L2e. eL4d <b>ed e<b>gn
+ eL8deL4e <ba>d <b>ee d<bb
+ L2>f. L4edL8fe L4fL8edL4c faf
+ fL8ceL4d L8edL4ed eff e<b>d
+ L2e. $|
+
+$i-0K4#L4gL8efL4g gea gL16eeL8fL4g
+ L2bL4a L2fL4e gL8e==gL4a L8cfL16ggL8eL4e
+ L8frL2e L4gL8efL4g gea gL16eeL8fL4g
+ L2bL4a aL8e==fL4f eab gfc
+ L2<b. L4>fag L8fbL4ge- fnd-g-
+ e-a-g- g-b-fn a-fng- L2b-L4bn
+ L2g. L4gL8efL4g gea gL16eeL8fL4g
+ L2bL4a aL8e==fL4f eab gfc
+ L2<b. $|
+
+$i-44K3#L4>edL8fe L4fL8edL4c faf
+ fL8ceL4d dff adc ede
+ L2g. L4edL8fe L4fL8edL4c faf
+ fL8ceL4d L8edL4ed eff e<b>d
+ L2e. eL4d <b>ed e<b>gn
+ eL8deL4e <ba>d <b>ee d<bb
+ L2>f. L4edL8fe L4fL8edL4c faf
+ fL8ceL4d L8edL4ed eff e<b>d
+ L2e. $|
+
+$i-12P3t$i-0J3,4L8c<aL4ab >cL8<bgL4a a>fd
+ cL8<a==gL4f fbf >d<ga L8baL4aa
+ L2b. L8>c<aL4ab >cL8<bgL4a a>fd
+ cL8<a==gL4f L8bgL4eb gaf L8aeL4fa
+ L2>c. L4<b>cL8<fgn L4gnbg L8eaL4gnL8g>cn
+ <bgnL4gg L2eL4d egn>cn L8<gndf.L16gL4g#
+ L2a. L8>c<aL4ab >cL8<bgL4a a>fd
+ cL8<a==gL4f L8bgL4eb gaf L8aeL4fa
+ L2>c. $|
+
+$i-20K4#L8<b>ecdL4d eL8<g.L16aL8ab bgL4e>c
+ <bg>e <aL8b>c<b>c L4cL8<b>cL4c <a>c<g
+ L2>c. L8<b>ecdL4d eL8<g.L16aL8ab bgL4e>c
+ <bg>e L8ecL4<aL8>c<b L4bL8>e==fL4f <b>c<a
+ L2g. L4ba>e L2<bL8a-b- L4a-b-==>d-
+ <a-.L8>d-L4<b- >e-L8<b-==>cnL4<b >e-<b-b b->g-d
+ L2e. L8<b>ecdL4d eL8<g.L16aL8ab bgL4e>c
+ <bg>e L8ecL4<aL8>c<b L4bL8>e==fL4f <b>c<a
+ L2g. $|
+
+$i-22K3#L8>c<aL4ab >cL8<bgL4a a>fd
+ cL8<a==gL4f fbf >d<ga L8baL4aa
+ L2b. L8>c<aL4ab >cL8<bgL4a a>fd
+ cL8<a==gL4f L8bgL4eb gaf L8aeL4fa
+ L2>c. L4<b>cL8<fgn L4gnbg L8eaL4gnL8g>cn
+ <bgnL4gg L2eL4d egn>cn L8<gndf.L16gL4g#
+ L2a. L8>c<aL4ab >cL8<bgL4a a>fd
+ cL8<a==gL4f L8bgL4eb gaf L8aeL4fa
+ L2>c. $|
+
+$i-22P4$i-57J3,4L4O0a>d<b agL8a>c dffcL4<b
+ L2aL4>d dL8<bL16aaL4an >d<bL8>fc L4ef<a
+ L2>e. L4<a>d<b agL8a>c dffcL4<b
+ L2aL4>d ecd cfL8<b>c L4cdL8d<a
+ L2a. L4>g<a>d L2eL4<gn >cnde
+ e<gn>cn L8<gnbL4aL8bg gnbL4>e<a L2bL4>e
+ L2f. L4<a>d<b agL8a>c dffcL4<b
+ L2aL4>d ecd cfL8<b>c L4cdL8d<a
+ L2a. $|
+
+$i-19K4#L4>eag L8c<bL4ba >e<g>c
+ dL16eeL8<bL4a >fL8d.L16fL4e ega fee
+ L2<a. L4>eag L8c<bL4ba >e<g>c
+ dL16eeL8<bL4a >acf gad ea<a
+ L2>e. L4<bL8>c<b>cd L4de<a- L8>d-cnL4<b-b
+ L8>cne-L4d-g- L8e-g-L4ed- L8<a-b-L4bL8>e-<b >d-fnL4g-<b
+ L2>c. L4eag L8c<bL4ba >e<g>c
+ dL16eeL8<bL4a >acf gad ea<a
+ L2>e. $|
+
+$i-0K3#L4<a>d<b agL8a>c dffcL4<b
+ L2aL4>d dL8<bL16aaL4an >d<bL8>fc L4ef<a
+ L2>e. L4<a>d<b agL8a>c dffcL4<b
+ L2aL4>d ecd cfL8<b>c L4cdL8d<a
+ L2a. L4>g<a>d L2eL4<gn >cnde
+ e<gn>cn L8<gnbL4aL8bg gnbL4>e<a L2bL4>e
+ L2f. L4<a>d<b agL8a>c dffcL4<b
+ L2aL4>d ecd cfL8<b>c L4cdL8d<a
+ L2a. $|
+
+$i-0P5$i-52J3,4rL4r L2rL4r L2rL4r
+ L2rL4r L2rL4r L2rL4r L2rL4r
+ L2rL4r L2rL4r L2rL4r L2rL4r
+ L2rL4r L2rL4r L2rL4r L2rL4r
+ L2rL4r L2rL4r L2rL4r L2rL4r
+ L2rL4r L2rL4r L2rL4r L2rL4r
+ L2rL4r L2rL4r L2rL4r L2rL4r
+ L2rL4r L2rL4r L2rL4r L2rL4r
+ L2rL4r $|
+
+$i-117K4#L2rL4r L2rL4r L2rL4r
+ L2rL4r L2rL4r L2rL4r L2rL4r
+ L2rL4r L2rL4r L2rL4r L2rL4r
+ L2rL4r L2eL4e L2eL4e L2eL4e
+ L2eL4e L2rL4r L2rL4r L2rL4r
+ L2rL4r L2rL4r L2rL4r L2rL4r
+ L2rL4r L2rL4r L2rL4r L2rL4r
+ L2rL4r L2eL4e L2eL4e L2eL4e
+ L2eL4e $|
+
+$i-47K3#L2rL4r L2rL4r L2rL4r
+ L2rL4r L2rL4r L2rL4r L2rL4r
+ L2rL4r L2rL4r L2rL4r L2rL4r
+ L2rL4r L2rL4r L2rL4r L2rL4r
+ L2rL4r L2rL4r L2rL4r L2rL4r
+ L2rL4r L2rL4r L2rL4r L2rL4r
+ L2rL4r L2rL4r L2rL4r L2rL4r
+ L2rL4r L2rL4r L2rL4r L2rL4r
+ L2rL4r $|
+
+$i-96
+; Random number seed was 53850
+; Current time is Sat Sep 14 13:43:09 1996
+@

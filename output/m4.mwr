@@ -1,0 +1,363 @@
+; Movement 4
+~x0litt.chr
+$-$c144i3,5y9#z3u5,0,-8,6w16h12m0
+$x0,6,0,TMovement 4
+$x0,4,0,AClara Empricost 1996
+$x0,3,0,CPrinted on Manuscript Writer
+P1$i-72J2,4K1#rL8>a&<a>>d&<d ;5b(Unessential in B/S) G major
+L4>d&<d<>a&<a ;1a(Unessential in B) 5c 
+L2>g&<g
+ ;1b 1a 
+L4>a&<a>>c&<c ;2b(Unessential in A) 4b(Unessential in T/B) 
+>d&<dL8>c&<c<>b&<b ;4a(Unessential in S) G major
+>b&<b>a&<aL4>b&<b ;6b(Unessential in S) 3b(Unessential in T) 
+>e&<eL8>a&<a>b&<b
+ ;6a(Unessential in T/B) 5a(Unessential in S) 
+>>c&<c<>a&<aL4>b&<b== ;7b(Unessential in S) 1a 
+>a&<aL8>a&<a>>d&<d ;5b(Unessential in B/S) G major
+L4>d&<d<>a&<a ;1a(Unessential in B) 5c 
+L2>g&<g
+ ;1b 1a 
+L4>a&<a>>c&<c ;2b(Unessential in A) 4b(Unessential in T/B) 
+>d&<d<>e&<e ;6b G major
+>>e&<eL8<>b.&<b.L16>g&<g ;6b(Unessential in T) 6a(Unessential in S/A) 
+L4>a&<a>g&<g
+ ;2a(Unessential in B) 1b(Unessential in B) 
+>a&<a>e&<e ;2b 4a(Unessential in B) 
+>g&<gr ;1a(cad) 
+$|
+
+$i-52K1#L8>>e&<e>f&<fL4>e&<e ;1b(Unessential in S) E minor1b(Unessential in T) 
+L8>g&<g>a&<aL4>g&<g
+ ;6a(Unessential in S) 1c(Unessential in T) 
+>f&<f>e&<e ;2b(Unessential in B) 1a 
+L2>d#&<d# ;5a(cad) 
+L4>e&<e>d#&<d# ;6a(Unessential in T/A) E minor5a(Unessential in T/A) 
+>e&<e>g&<g
+ ;4b(Unessential in B) 3b(Unessential in S(accented)) 
+L8>a&<a>g&<gL4>e&<e ;6a 1b 
+L2>f&<f ;5a(cad) 
+L8>e&<e>f&<fL4>e&<e ;1b(Unessential in S) E minor1b(Unessential in T) 
+L8>g&<g>a&<aL4>g&<g
+ ;6a(Unessential in S) 1c(Unessential in T) 
+>f&<f>e&<e ;2b(Unessential in B) 1a 
+L2>d#&<d# ;5a(cad) 
+L4>g&<g>e&<e ;6b(Unessential in B/T) E minor1b(Unessential in T) 
+>e&<eL8>g&<g>e&<e
+ ;4a(Unessential in T/B) 6b(Unessential in A/S) 
+>f&<f>e&<eL4>d#&<d# ;2a(Unessential in T/S) 5a 
+L2>e&<e ;1a(cad) 
+$|
+
+$i-72K1#L4rL8<>a&<a>>d&<d ;5b(Unessential in B/S) G major
+L4>d&<d<>a&<a
+ ;1a(Unessential in B) 5c 
+L2>g&<g ;1b 1a 
+L4>a&<a>>c&<c ;2b(Unessential in A) 4b(Unessential in T/B) 
+>d&<d<>e&<e ;6b G major
+>>e&<eL8<>b.&<b.L16>g&<g
+ ;6b(Unessential in T) 6a(Unessential in S/A) 
+L4>a&<a>g&<g ;2a(Unessential in B) 1b(Unessential in B) 
+>a&<a>e&<e ;2b 4a(Unessential in B) 
+>g&<gr ;1a(cad) 
+$|
+
+$i-72K2#>>f&<f<>b&<b
+ ;1a(Unessential in A) D major2b 
+>>f&<f>e&<e ;6b(Unessential in B) 2a 
+>d&<d>c&<c ;1b(Unessential in T) 5a 
+L2>d&<d ;6a(cad) 
+L8>g&<g>d&<d>f&<f>e&<e
+ ;4a(Unessential in S) D major1a(Unessential in S) 
+L4>e&<eL8>d.&<d.L16>c&<c ;2b 1c(Unessential in S) 
+L4>d&<d>g&<g ;6a 4b 
+L2>c&<c ;5a(cad) 
+L4>f&<f<>b&<b
+ ;1a(Unessential in A) D major2b 
+>>f&<f>e&<e ;6b(Unessential in B) 2a 
+>d&<d>c&<c ;1b(Unessential in T) 5a 
+L2>d&<d ;6a(cad) 
+L8>e&<e>d&<d>d&<dL16>c&<c>c&<c
+ ;2b(Unessential in A/S) D major1a(Unessential in B/S) 
+L8<>b&<b>>d&<dL4>d&<d ;4a(Unessential in S) 1b(Unessential in T) 
+L2>e&<e ;2a 5a 
+>d&<d ;1a(cad) 
+$|
+
+$i-52K1#L4rL8<>a&<a>>d&<d
+ ;5b(Unessential in B/S) G major
+L4>d&<d<>a&<a ;1a(Unessential in B) 5c 
+L2>g&<g ;1b 1a 
+L4>a&<a>>c&<c ;2b(Unessential in A) 4b(Unessential in T/B) 
+>d&<d<>e&<e
+ ;6b G major
+>>e&<eL8<>b.&<b.L16>g&<g ;6b(Unessential in T) 6a(Unessential in S/A) 
+L4>a&<a>g&<g ;2a(Unessential in B) 1b(Unessential in B) 
+>a&<a>e&<e ;2b 4a(Unessential in B) 
+>g&<gr
+ ;1a(cad) 
+$|
+
+$i-59K0#>c&<c>>g&<g ;1a C major1b(Unessential in A) 
+L2>c&<c ;4a(Unessential in B) 4b(Unessential in B) 
+L4>d&<d<>g&<g ;5b 1a(Unessential in A(accented)) 
+L2>f&<f
+ ;4a(cad) 
+L4>>f&<f>c&<c ;4b(Unessential in B/A) C major1a(Unessential in B) 
+>e&<e>d&<d ;6b 5c(Unessential in B) 
+>c&<c>f&<f ;1b 2a(Unessential in T) 
+L2>g&<g
+ ;5a(cad) 
+L4<>c&<c>>g&<g ;1a C major1b(Unessential in A) 
+L2>c&<c ;4a(Unessential in B) 4b(Unessential in B) 
+L4>d&<d<>g&<g ;5b 1a(Unessential in A(accented)) 
+L2>f&<f
+ ;4a(cad) 
+L4>e&<eL8>>e.&<e.L16>c&<c ;3a(Unessential in B) C major6a(Unessential in S) 
+L4>c&<cL8>d&<d>f&<f ;4b 2a(Unessential in A/S) 
+>e&<e>c&<c>d&<d==>c&<c ;6b(Unessential in S) 5a(Unessential in S) 
+L2>c&<c
+ ;1a(cad) 
+$|
+
+$i-6K1#L4rL8<>a&<a>>d&<d ;5b(Unessential in B/S) G major
+L4>d&<d<>a&<a ;1a(Unessential in B) 5c 
+L2>g&<g ;1b 1a 
+L4>a&<a>>c&<c
+ ;2b(Unessential in A) 4b(Unessential in T/B) 
+>d&<d<>e&<e ;6b G major
+>>e&<eL8<>b.&<b.L16>g&<g ;6b(Unessential in T) 6a(Unessential in S/A) 
+L4>a&<a>g&<g ;2a(Unessential in B) 1b(Unessential in B) 
+>a&<a>e&<e
+ ;2b 4a(Unessential in B) 
+>g&<gr ;1a(cad) 
+$|
+
+$i-53K0#>g&<g>>g&<g ;1b(Unessential in T/B) C major1a(Unessential in B) 
+L8>e&<e>g&<gL4>e&<e ;3b(Unessential in S) 6a 
+L2>f&<f
+ ;4b 2a(Unessential in T) 
+>g&<g ;5a(cad) 
+L4>d&<d<>a&<a ;5b C major6b(Unessential in B) 
+L8>>d&<d>e&<eL4>e&<e ;2b(Unessential in S) 1a(Unessential in B) 
+>e&<e>f&<f
+ ;6a(Unessential in B) 4b(Unessential in A) 
+L2<>b&<b ;5a(cad) 
+L4>g&<g>>g&<g ;1b(Unessential in T/B) C major1a(Unessential in B) 
+L8>e&<e>g&<gL4>e&<e ;3b(Unessential in S) 6a 
+L2>f&<f
+ ;4b 2a(Unessential in T) 
+>g&<g ;5a(cad) 
+L4>g&<g>c&<c ;5a(Unessential in A/T) C major4b 
+>c&<c>d&<d ;1b(Unessential in T/B) 2a(Unessential in B) 
+>e&<eL8<>a&<a>b&<b
+ ;6b(Unessential in B/T) 4a(Unessential in T/S) 
+L2>>c&<c ;1a(cad) 
+$|
+
+$i-40K1#L4rL8<>a&<a>>d&<d ;5b(Unessential in B/S) G major
+L4>d&<d<>a&<a ;1a(Unessential in B) 5c 
+L2>g&<g
+ ;1b 1a 
+L4>a&<a>>c&<c ;2b(Unessential in A) 4b(Unessential in T/B) 
+>d&<d<>e&<e ;6b G major
+>>e&<eL8<>b.&<b.L16>g&<g ;6b(Unessential in T) 6a(Unessential in S/A) 
+L4>a&<a>g&<g
+ ;2a(Unessential in B) 1b(Unessential in B) 
+>a&<a>e&<e ;2b 4a(Unessential in B) 
+>g&<gr ;1a(cad) 
+$|
+
+$i-73P2$i-71J2,4rd <b>d
+ d<b L8>edL4c <a>g e<b
+ b>d cd fd <b>d
+ d<b L8>edL4c <ab >bL8ge
+ L4ed <a>c dr $|
+
+$i-22K1#<b>b
+ eb >c<e L2f L8gaba
+ L4ag >c<e L2b L4<b>b
+ eb >c<e L2f L4>c<b
+ eL8>c<g L4af L2g# $|
+
+$i-6K1#L4rd
+ <b>d d<b L8>edL4c <ab
+ >bL8ge L4ed <a>c dr
+ $|
+
+$i-71K2#L8dfL4e fg L2a f
+ L4ga ba fg L2a
+ L8dfL4e fg L2a f
+ L8efL4f ga ga L2f
+ $|
+
+$i-12K1#L4rd <b>d d<b L8>edL4c
+ <ab >bL8ge L4ed <a>c
+ dr $|
+
+$i-59K0#<gL16>ccL8e L4cf de
+ L8dL4c. L8fgL4g eg ga
+ L2g L4<gL16>ccL8e L4cf de
+ L8dL4c. <b>c fL8df L4ad
+ L2e $|
+
+$i-48K1#L4rd <b>d d<b
+ L8>edL4c <ab >bL8ge L4ed
+ <a>c dr $|
+
+$i-41K0#c<g b>c
+ fd L2<b L4>ge ac
+ eL8cf L2g L4c<g b>c
+ fd L2<b L8b>dL4c gd
+ af L2g $|
+
+$i-44K1#L4rd <b>d
+ d<b L8>edL4c <ab >bL8ge
+ L4ed <a>c dr $|
+
+$i-20P3t$i-44J2,4r<a
+ gf gd eL8g==e L4fe
+ bL8fg gfL4f fg aa
+ gf gd eL8g==e L4fe
+ L8b>eL4<b >c<g eg br
+ $|
+
+$i-6K1#eL8bL16>ee L4cL16<eeL8f L4fg L2b
+ L8>effd# L4ed# e<b L2>d#
+ L4<eL8bL16>ee L4cL16<eeL8f L4fg L2b
+ L8>ge<b.L16>e L8c<bL4>c L8c<aL4b L2b
+ $|
+
+$i-57K1#L4ra gf gd eL8g==e
+ L4fe L8b>eL4<b >c<g eg
+ br $|
+
+$i-68K2#ab b>e L8<a>dL4e
+ L2d L4<ba >ef <b>d
+ L2e L4<ab b>e L8<a>dL4e
+ L2d L4<b>d dL8<aL16>dd L4<b>c
+ L2d $|
+
+$i-49K1#L4r<a gf gd
+ eL8g==e L4fe L8b>eL4<b >c<g
+ eg br $|
+
+$i-49K0#eg a>c
+ L2<g a L4>ce <ab
+ >cL8<aL16>dd L2<b L4eg a>c
+ L2<g a L4ga >c<f
+ ab L2>c $|
+
+$i-69K1#L4r<a gf
+ gd eL8g==e L4fe L8b>eL4<b
+ >c<g eg br $|
+
+$i-44K0#L8gfL4e
+ ea >cL8<a==g L2g L4ga
+ ag >c<f L2g L8gfL4e
+ ea >cL8<a==g L2g L8gfL4f
+ L8geL4f L8ab>c==d L2e $|
+
+$i-42K1#L4r<a
+ gf gd eL8g==e L4fe
+ L8b>eL4<b >c<g eg br
+ $|
+
+$i-0P4$i-22J2,4rL8fd <gaL4a bg== >cL8ec
+ L4dc <g>d L8edL4d <ag
+ >dL8fd <gaL4a bg== >cL8ec
+ L4d<g g>e L8<a>cL16<bbL8>c L4c.==L8<g
+ L4gr $|
+
+$i-49K1#g>g c<b L8a>cL4e
+ L2<b L4O2cO0b L8>c<aL4b >cg
+ L2<b L4g>g c<b L8a>cL4e
+ L2<b L8>egL4g L8aeL4e f<b
+ L2>e $|
+
+$i-57K1#L4rL8fd <gaL4a bg==
+ >cL8ec L4d<g g>e L8<a>cL16<bbL8>c
+ L4c.==L8<g L4gr $|
+
+$i-22K2#>d<g L8>dfL4e
+ fa L2b L4<g>d <ga
+ L2b a L4>d<g L8>dfL4e
+ fa L2b L4<gL8>df L4gf
+ ea L2d $|
+
+$i-49K1#L4rL8fd <gaL4a
+ bg== >cL8ec L4d<g g>e
+ L8<a>cL16<bbL8>c L4c.==L8<g L4gr $|
+
+$i-49K0#>ce
+ L8fc<a.L16>c L4<b>c L2f L8<a>cL16ccL8e
+ L4cL8d==e L4ed L2<g L4>ce
+ L8fc<a.L16>c L4<b>c L2f L8e<bL4a
+ a>d c<g L2>c $|
+
+$i-0K1#L4rL8fd
+ <gaL4a bg== >cL8ec L4d<g
+ g>e L8<a>cL16<bbL8>c L4c.==L8<g L4gr
+ $|
+
+$i-69K0#L8>edc.L16<g L4ga a>d L2<g
+ L4bL8>c==e L4fL8c==<b agL4a L2g
+ L8>edc.L16<g L4ga a>d L2<g
+ L4ga L8>ecdL16cc L8ceL4f L2c
+ $|
+
+$i-0K1#L4rL8fd <gaL4a bg== >cL8ec
+ L4d<g g>e L8<a>cL16<bbL8>c L4c.==L8<g
+ L4gr $|
+
+$i-6P5$i-109J2,4rd L2d d
+ d d r r
+ r r d d
+ d d g g
+ g g $|
+
+$i-53K1#r r
+ r r r r
+ r r r r
+ r r r r
+ r r $|
+
+$i-14K1#L4rd L2d
+ d d d g
+ g g g $|
+
+$i-96K2#r
+ r r r r
+ r r r r
+ r r r r
+ r r r $|
+
+$i-49K1#L4rd
+ L2d d d d
+ g g g g
+ $|
+
+$i-14K0#r r r r
+ r r r r
+ r r r r
+ r r r r
+ $|
+
+$i-44K1#L4rd L2d d d
+ d g g g
+ g $|
+
+$i-49K0#r r r
+ r r r r
+ r r r r
+ r r r r
+ r $|
+
+$i-14K1#L4rd L2d d
+ d d g g
+ g g $|
+
+$i-96
+; Random number seed was 53850
+; Current time is Sat Sep 14 13:43:10 1996
+@
