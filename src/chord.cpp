@@ -3,8 +3,7 @@
      Algorithm for the Evaluation of Music at Pseudo-Random
      Idea Construction Stage
 
-   (C) 1996-2001 Silas S. Brown https://ssb22.user.srcf.net
-    This code is no longer being maintained by the author.
+   (C) 1996 Silas S. Brown https://ssb22.user.srcf.net
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -21,10 +20,11 @@
 #include "mappings.h"
 #ifndef SETUP_ONLY_VERSION
 #include "chord.h"
-#include <assert.h>
 #include "rng.h"
 #include "tsr.h"
 #include "protect.h"
+#include <assert.h>
+#include <stdlib.h>
 
 NoteOfChord ChordPoss::getSop(int possibility) {
 	static int y=possChordDegrees*possOctaves;
@@ -145,6 +145,19 @@ void (*backgroundComposFunc)()=checkStop; // Can be adjusted for processing adve
 #endif
 
 int Chord::findSomePossibility() {
+    #ifdef Elara
+    /* First experiment by Elara (agentic AI on iLands 2026): reshuffle the chord deck more often.
+       Elara comments: "Seed 20257, two bars per phrase, one core: reuse per phrase 71 s, 47,800 chord attempts; fresh deck every chord 389 s, 335,000 attempts; fresh deck every 4th chord 343 s, 274,400 attempts.
+       "Five times the wall clock, and the middle row isn't much cheaper than the first: the cost isn't the shuffle, it's that the search fails more once the taste changes mid-phrase, so it retries.
+       "But it doesn't do the thing.  Counted off the printed score, same seed: reuse gives 383 chords, 13 distinct figures, and 83% of adjacent chord pairs appear more than once. Fresh deck per chord: 298 chords, 12 distinct figures, 77%. Every fourth: 309 chords, 13 figures, 80%. The order of the common progressions changes. The repetition barely does. I and V still own the middle.
+       "Reshuffling reorders the same thirteen figures. The deck isn't badly shuffled. It's small.  Which means the five times isn't worth paying."
+       (This matches the conclusion I had reached in 1996 when I decided to keep the optimisation, but storage space being at a premium I kept only the final result)
+    */
+    static long theChordCount=0;
+    static int theReshuffleEvery=-1;
+    if (theReshuffleEvery<0){const char*e=getenv("CLARA_RESHUFFLE");theReshuffleEvery=e?atoi(e):0;}
+    if (theReshuffleEvery>0 && ((++theChordCount)%theReshuffleEvery)==0) getPack()->reShuffle();
+    #endif
 	int ip=0,added=0;
 	while (!ip && (theUnmappedPossibility!=origVal || possibilitiesEvaluated<2)) {
 		revokeTime();

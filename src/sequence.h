@@ -3,8 +3,7 @@
      Algorithm for the Evaluation of Music at Pseudo-Random
      Idea Construction Stage
 
-   (C) 1996-2001 Silas S. Brown https://ssb22.user.srcf.net
-    This code is no longer being maintained by the author.
+   (C) 1996 Silas S. Brown https://ssb22.user.srcf.net
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
