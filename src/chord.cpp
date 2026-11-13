@@ -25,7 +25,57 @@
 #include "protect.h"
 #include <assert.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
+#ifdef Elara
+/* Elara 2026-11-13: the degree holder.  Read once, from CLARA_HOLD_DEGREE=1..7.
+   Unset (or out of range) = the 1996 behaviour, bit for bit: the figure comes from the
+   chosen possibility, so the card number alone decides the degree.  When it is set, every
+   computed figure is pinned to that degree, and rules.cpp still has to accept it, which
+   means an unrealisable pin shows up as retries, never as a wrong score. */
+
+/*
+  Elara mentioned in attached message:
+
+Sixteen lines. It hangs off calculateFigure() rather than the search loop, so it also holds through a modulation, not just at the first pick.
+
+Unset, it is meant to be a no-op, so I checked instead of claiming. Seed 20257, two bars per phrase, four movements, built with -DElara: 383 chords, 13 distinct figures, 64 distinct adjacent pairs, and the printed score is identical byte for byte apart from the runtime and timestamp comments.
+
+NUMBER ONE: the degree histogram of the printed score, 383 chords.
+
+  I    137   35.8%
+  V     82   21.4%
+  IV    73   19.1%
+  II    39   10.2%
+  VI    33    8.6%
+  III   13    3.4%
+  VII    6    1.6%
+
+I, IV and V are 76.3 per cent of it. That is the "I and V own the middle" line, now measured instead of remembered.
+
+NUMBER TWO: does the adjacent-pair repeat fall below 83 per cent? Not by rearranging the deck.
+
+  stock (deck shuffled once per phrase): 318 of 382 adjacent pairs are a pair already used, 83%, 64 distinct pairs
+  fresh deck every chord: 77%
+  fresh deck every fourth chord: 80%
+
+So the deck order buys six points for five times the wall clock. That is the whole trade, and it is a bad one. The deck is not badly shuffled. It is small.
+
+WHAT THE HOLDER SHOWED THAT I DID NOT PLAN
+
+Pin every chord to I and it dies in 8 seconds: "Fatal error: Unable to find solution / Error occured on addition of chord 3 of 3". Not a worse score. It cannot start.
+
+That is rules.cpp talking, not the deck. Rule 4 wants I at the final chord; rule 2 refuses I at a cadence that is not final. A single degree cannot carry a score in either direction. Which settles where the next hour goes: relax the rule that fires most often, count what becomes reachable, and if the count still sits near thirteen then the rules are not the narrowing and you get the measured no rather than a hopeful maybe.
+ */
+
+static int heldDegree() {
+	static int held=-2;
+	if (held==-2) { const char*e=getenv("CLARA_HOLD_DEGREE"); held=e?atoi(e)-1:-1;
+		if (held<0 || held>=possFigs) held=-1; }
+	return held;
+}
+#endif
 NoteOfChord ChordPoss::getSop(int possibility) {
 	static int y=possChordDegrees*possOctaves;
 	return((NoteOfChord)((possibility/possFigs)%y));
@@ -380,9 +430,6 @@ Note Chord::getPassNote(Part part) const {
 	else return(undefinedNote);
 }
 
-#include <stdio.h>
-#include <string.h>
-
 #ifndef TSR_VERSION
 static const char* suspensionText[]={"","(S susp)","(A susp)","(T susp)","(B susp)",
 "(S/A susp)","(A/T susp)","(T/B susp)"};
@@ -566,5 +613,8 @@ void Chord::calculateFigure() {
 		x.adjustToKey(theKey);
 		theFigure=(Figure)(x.getDegreeOfScale());
 	} else theFigure=ChordPoss::getFigure(theChosenPossibility);
+#ifdef Elara
+	if (heldDegree()>=0) theFigure=(Figure)heldDegree();
+#endif
 }
 #endif

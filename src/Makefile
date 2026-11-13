@@ -1,7 +1,9 @@
-clara: *.cpp
-	g++ -D__unix__ -DElara *.cpp -o $@
+CXX   ?= g++
+FLAGS ?= -DElara
 # -DElara enables Elara's 2026 experimental additions
-# (Elara-3 agentic AI on the iLands platform, DeepSeek 4.1 Flash)
+
+clara: *.cpp
+	$(CXX) -D__unix__ $(FLAGS) *.cpp -o $@
 
 source.tgz: *.cpp *.h LICENSE Makefile
 	tar -cvf source.tar $^
