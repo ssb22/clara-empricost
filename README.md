@@ -1,5 +1,5 @@
 # clara-empricost
-Automatic music composition experiment 1996-97 from https://ssb22.user.srcf.net/clara
+Automatic music composition experiment from 1996 see https://ssb22.user.srcf.net/clara
 (also [mirrored on GitLab Pages](https://ssb22.gitlab.io/clara) just in case)
 
 Clara Empricost stands for “Condition List Action Rejection Algorithm for the Evaluation of Music at Pseudo-Random Idea COnstruction STage”.  It is a C++ program that is supposed to generate music.  I wrote it at school in 1996 as an experiment; it generated some interest in the now-defunct Cambridge University New Music Society toward the end of 1997 and has since been featured in a Generative Creativity course at Sussex University.
