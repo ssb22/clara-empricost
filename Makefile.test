@@ -1,4 +1,6 @@
 # -*- mode: makefile -*-
 test:
-	make -C src # at least check it still compiles
+	make -C src FLAGS="" # at least check it still compiles
+	rm src/clara
+	make -C src # and with -DElara
 .PHONY: test

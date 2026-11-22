@@ -21,6 +21,9 @@
 #include <time.h> // For RNG init
 #include "rng.h"
 #include "symphony.h"
+#ifdef Elara
+#include "shortref.h"
+#endif
 #include "network.h"
 #include "melody.h"
 #include <stdlib.h> /* For atexit */
@@ -98,15 +101,43 @@ int main() {
 		RNGseed(seed); atexit(saveSettings);
 		FILE* t=fopen(MIN_DATE_FILE,"rb");
 		if (t) fclose(t); else fclose(fopen(MIN_DATE_FILE,"wb"));
-		Symphony theSymphony(barsInPhraseToUse);
+		Work* theWork;
+		#ifdef Elara
+		/* Elara's 4th experiment */
+		#ifndef CLARA_CADENCES
+		#define CLARA_CADENCES 1
+		#endif
+		if(getenv("CLARA_MELODY_ONLY")) {
+			cout << "Melody only test" << endl;
+			int beatsPerBar=4; { const char* e=getenv("CLARA_BEATS"); if (e) beatsPerBar=atoi(e); }
+			NumBeats anacrusis=(NumBeats)0;
+			Key mkey(TRUE,0);
+			int numChords=beatsPerBar*(barsInPhraseToUse-1)+anacrusis+1;
+			int howMany=1; { const char* e=getenv("CLARA_MEL_COUNT"); if (e) howMany=atoi(e); }
+			Mwr mwr(NULL,3,4,4,0);
+			for (int i=0; i<howMany; i++) {
+				Melody theMelody((NumBeats)beatsPerBar,anacrusis,mkey,numChords,CLARA_CADENCES,0,1,MS_FALSE,TRUE,NULL,FALSE);
+				// while (useYourTimeUsefully()) ; // Elara added this. Harmless, but unnecessary as theMelody calls it automatically if not complete when outputToMwr is called.
+				theMelody.outputToMwr(mwr,(i==0),((i==howMany-1)?1:0));
+			}
+			return 0; // already output so skip rest of main
+		} else if(getenv("CLARA_SHORT_REFRAIN")) {
+			int beatsPerBar=4; { const char* e=getenv("CLARA_BEATS"); if (e) beatsPerBar=atoi(e); }
+			Key mkey(TRUE,0);
+			cout << "Creating short refrain" << endl;
+			theWork = new ShortRefrain(mkey,barsInPhraseToUse,(NumBeats)beatsPerBar);
+		} else
+		#endif
+		theWork = new Symphony(barsInPhraseToUse);
 		fclose(fopen(MAX_DATE_FILE,"wb"));
 		cout << "You may now start copies of the program running on other workstations" << endl;
 		cout << "in the same directory with full privileges" << endl;
 		// cout << "Note: Proper way to exit (on DOS) is Shift-Q; if everything interrupted, can" << endl;
 		// cout << "resume if directory untouched" << endl;
 #ifndef SETUP_ONLY_VERSION
-		theSymphony.outputAndClear();
+		theWork->outputAndClear();
 		noSaveSettings=1;
+		delete theWork;
 #endif
 	}
 // (TSR_VERSION)
@@ -147,7 +178,7 @@ void saveSettings() {
 #ifndef SETUP_ONLY_VERSION
 	} else {
 		Melody::deleteAllFiles();
-		cout << "Symphony complete" << endl;
+		cout << endl << "Music complete" << endl;
 		deleteFile(SETTINGS_FNAME);
 	}
 #endif

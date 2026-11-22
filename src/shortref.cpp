@@ -1,24 +1,47 @@
 #ifdef Elara
-/* Elara's 4th experiment - not yet plumbed in to main.cpp */
+/* Elara's 4th experiment */
+/* Short Refrain: verses freshly composed, the return is one bar long. */
 #include "shortref.h"
+#include <stdlib.h>
+#include <string.h>
 ShortRefrain::ShortRefrain(Key key,int barsInPhrase,NumBeats beatsPerBar)
-  : theInitKey(key), theRelatedKey(key.getRandomRelatedKey()) {
-  NumBeats anacrusis=0;
-  int verseChords=beatsPerBar*(barsInPhrase-1)+anacrusis+1;
-  theRefrain=new Melody(beatsPerBar,anacrusis,key,beatsPerBar+1,1,0,1,MS_FALSE,TRUE,NULL,FALSE);
-  for (int i=0;i<3;i++)
-    theVerse[i]=new Melody(beatsPerBar,anacrusis,key,verseChords,1,1,1,MS_FALSE,TRUE,NULL,FALSE);
-  theMiddle=new Melody(beatsPerBar,anacrusis,theRelatedKey,verseChords,1,1,1,MS_FALSE,TRUE,NULL,FALSE);
+ : theInitKey(key), theRelatedKey(key.getRandomRelatedKey()) {
+	NumBeats anacrusis=0;
+	const char* only=getenv("CLARA_SR_ONLY");
+	int verseChords=beatsPerBar*(barsInPhrase-1)+anacrusis+1;
+	theRefrain=NULL; theMiddle=NULL; for (int i=0;i<3;i++) theVerse[i]=NULL;
+	if (!only || !strcmp(only,"refrain")) {
+		int rl=beatsPerBar+1; { const char* e=getenv("CLARA_SR_REF_LEN"); if (e) rl=atoi(e); }
+		int ri=0; { const char* e=getenv("CLARA_SR_REF_IMP"); if (e) ri=atoi(e); }
+		theRefrain=new Melody(beatsPerBar,anacrusis,key,rl,1,ri,1,MS_FALSE,TRUE,NULL,FALSE);
+	}
+	if (!only || !strcmp(only,"verse"))
+		for (int i=0;i<3;i++)
+			theVerse[i]=new Melody(beatsPerBar,anacrusis,key,verseChords,1,1,1,MS_FALSE,TRUE,NULL,FALSE);
+	if (!only || !strcmp(only,"middle"))
+		theMiddle=new Melody(beatsPerBar,anacrusis,theRelatedKey,verseChords,1,1,1,MS_FALSE,TRUE,NULL,FALSE);
+}
+ShortRefrain::~ShortRefrain() {
+	delete theRefrain; delete theMiddle;
+	for (int i=0;i<3;i++) delete theVerse[i];
 }
 void ShortRefrain::outputToMwr(Mwr &mwr,Part part) {
-  mwr.setPart(part);
-  mwr.writeComment("Verse 1"); theVerse[0]->outputToMwr(mwr,1,0);
-  mwr.writeComment("Refrain"); theRefrain->outputToMwr(mwr,0,0);
-  mwr.writeComment("Verse 2"); theVerse[1]->outputToMwr(mwr,0,0);
-  mwr.writeComment("Refrain"); theRefrain->outputToMwr(mwr,0,0);
-  mwr.writeComment("Middle");  theMiddle->outputToMwr(mwr,0,0,&theRelatedKey);
-  mwr.writeComment("Refrain"); theRefrain->outputToMwr(mwr,0,0,&theInitKey);
-  mwr.writeComment("Verse 3"); theVerse[2]->outputToMwr(mwr,0,0);
-  mwr.writeComment("Refrain"); theRefrain->outputToMwr(mwr,0,1);
+	mwr.setPart(part);
+	if (theVerse[0]) { mwr.writeComment("Verse 1"); theVerse[0]->outputToMwr(mwr,1,0); }
+	if (theRefrain) { mwr.writeComment("Refrain"); theRefrain->outputToMwr(mwr,0,0); }
+	if (theVerse[1]) { mwr.writeComment("Verse 2"); theVerse[1]->outputToMwr(mwr,0,0); }
+	if (theRefrain) { mwr.writeComment("Refrain"); theRefrain->outputToMwr(mwr,0,0); }
+	if (theMiddle) { mwr.writeComment("Middle"); theMiddle->outputToMwr(mwr,0,0,&theRelatedKey); }
+	if (theRefrain) { mwr.writeComment("Refrain"); theRefrain->outputToMwr(mwr,0,0,&theInitKey); }
+	if (theVerse[2]) { mwr.writeComment("Verse 3"); theVerse[2]->outputToMwr(mwr,0,0); }
+	if (theRefrain) { mwr.writeComment("Refrain"); theRefrain->outputToMwr(mwr,0,1); }
+}
+void ShortRefrain::outputAndClear() {
+	Mwr mwr(NULL,3,4,4,0);
+	outputToMwr(mwr,P_SOP);
+	outputToMwr(mwr,P_ALT);
+	outputToMwr(mwr,P_TEN);
+	outputToMwr(mwr,P_BAS);
+	outputToMwr(mwr,P_PEDAL);
 }
 #endif

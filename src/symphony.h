@@ -19,8 +19,9 @@
 */
 #ifndef SYMPHONY_H
 #define SYMPHONY_H
+#include "work.h"
 class Sonata; class Melody; class Minuet; class Rondo; class Canon;
-class Symphony {
+class Symphony : public Work {
 public:
 	Symphony(int barsInPhrase=4);
 	~Symphony();

@@ -1,16 +1,18 @@
 #ifdef Elara
-/* Elara's 4th experiment - not yet plumbed in to main.cpp */
+/* Elara's 4th experiment */
 #include "melody.h"
 #include "key.h"
-class ShortRefrain {
- public:
-  ShortRefrain(Key key,int barsInPhrase,NumBeats beatsPerBar=4);
-  ~ShortRefrain();
-  void outputToMwr(Mwr &mwr,Part part);
- protected:
-  Melody* theRefrain;
-  Melody* theVerse[3];
-  Melody* theMiddle;
-  const Key theInitKey,theRelatedKey;
+#include "work.h"
+class ShortRefrain : public Work {
+public:
+	ShortRefrain(Key key,int barsInPhrase,NumBeats beatsPerBar=4);
+	~ShortRefrain();
+	void outputToMwr(Mwr &mwr,Part part);
+	void outputAndClear();
+protected:
+	Melody* theRefrain;
+	Melody* theVerse[3];
+	Melody* theMiddle;
+	const Key theInitKey,theRelatedKey;
 };
 #endif
