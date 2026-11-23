@@ -22,6 +22,9 @@
 #ifndef SETUP_ONLY_VERSION
 #include "part.h"
 #include "rng.h"
+#ifdef Elara
+#include <stdlib.h> /* getenv */
+#endif
 #define IR_SOP 1
 #define IR_ALT 2
 #define IR_TEN 4
@@ -49,6 +52,19 @@ int randomMIDIinst(Part part) {
 	static int doneBefore=0;
 	if (!doneBefore) {
 		doneBefore=1; int lp;
+#ifdef Elara
+		/* Elara 2026: a cheap General-MIDI synth does pianos, bells and
+		   plucked things much better than it does strings and brass, so
+		   let a listener ask for the instruments that survive a synth.
+		   Unset by default: the 1996 behaviour is unchanged. */
+		if (getenv("CLARA_SYNTH_INSTS")) {
+			static const int synthOK[]={0,6,8,9,11,12,13,14,/*19,20,21,22,*/24,45,46,47/*,52*/}; /* SSB: commented out organs and choir as Elara wants to stick to plucked things i.e. avoid sample loops */
+			char keep[NUM_MIDI_INSTS]; int n;
+			for (n=0; n<NUM_MIDI_INSTS; n++) keep[n]=0;
+			for (n=0; n<(int)(sizeof(synthOK)/sizeof(synthOK[0])); n++) keep[synthOK[n]]=1;
+			for (n=0; n<NUM_MIDI_INSTS; n++) if (!keep[n]) instrumentRange[n]=0;
+		}
+#endif
 		for (lp=0; lp<NUM_MIDI_INSTS; lp++) instrument_shuffle[lp]=lp;
 		pushRNG();
 		for (lp=0; lp<NUM_MIDI_INSTS; lp++) {
