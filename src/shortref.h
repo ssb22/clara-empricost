@@ -15,4 +15,16 @@ protected:
 	Melody* theMiddle;
 	const Key theInitKey,theRelatedKey;
 };
+class AbacForm : public Work {
+public:
+	AbacForm(Key key,int barsInPhrase,NumBeats beatsPerBar=4);
+	~AbacForm();
+	void outputToMwr(Mwr &mwr,Part part);
+	void outputAndClear();
+protected:
+	Melody* theA[2];
+	Melody* theB;
+	Melody* theC;
+	const Key theInitKey,theRelatedKey;
+};
 #endif

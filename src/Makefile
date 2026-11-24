@@ -12,8 +12,8 @@ install-lilypond-programs:
 	git clone --depth 1 https://github.com/ssb22/mwr2ly # (use git clone rather than wget as that can 429 if too many jobs started at once even though same company)
 	cd mwr2ly && btyacc mwr2ly.y
 	cd mwr2ly && g++ -Wno-write-strings y[._]tab.c -o mwr2ly
-	mv mwr2ly/mwr2ly /usr/local/bin/
-	mv mwr2ly/midi-add-depth.py /usr/local/bin/midi-add-depth
+	sudo mv mwr2ly/mwr2ly /usr/local/bin/
+	sudo mv mwr2ly/midi-add-depth.py /usr/local/bin/midi-add-depth
 	rm -rf mwr2ly
 %.ly: %.mwr
 	mwr2ly < $< > $@
