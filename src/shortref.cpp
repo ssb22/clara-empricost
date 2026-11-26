@@ -66,7 +66,10 @@ AbacForm::AbacForm(Key key,int barsInPhrase,NumBeats beatsPerBar)
 	theA[1]=new Melody(beatsPerBar,anacrusis,key,verseChords,1,aImperfect,1,MS_FALSE,TRUE,NULL,FALSE);
 	theC=new Melody(beatsPerBar,anacrusis,key,cl,1,cImp,1,MS_FALSE,TRUE,NULL,FALSE);
 }
-AbacForm::~AbacForm() {}
+AbacForm::~AbacForm() {
+	delete theB; delete theC;
+	for (int i=0;i<2;i++) delete theA[i];
+}
 void AbacForm::outputToMwr(Mwr &mwr,Part part) {
 	mwr.setPart(part);
 	if (theA[0]) { mwr.writeComment("A1"); theA[0]->outputToMwr(mwr,1,0); }

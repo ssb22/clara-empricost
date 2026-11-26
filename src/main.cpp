@@ -126,6 +126,11 @@ int main() {
 			Key mkey(TRUE,0);
 			cout << "Creating short refrain" << endl;
 			theWork = new ShortRefrain(mkey,barsInPhraseToUse,(NumBeats)beatsPerBar);
+		} else if(getenv("CLARA_ABAC")) {
+			int beatsPerBar=4; { const char* e=getenv("CLARA_BEATS"); if (e) beatsPerBar=atoi(e); }
+			Key mkey(TRUE,0);
+			cout << "Creating ABAC" << endl;
+			theWork = new AbacForm(mkey,barsInPhraseToUse,(NumBeats)beatsPerBar);
 		} else
 		#endif
 		theWork = new Symphony(barsInPhraseToUse);
